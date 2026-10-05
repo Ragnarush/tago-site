@@ -95,7 +95,7 @@ a:hover { text-decoration-thickness: 2px; }
   background: var(--accent-soft); color: var(--on-accent-soft);
   border-radius: 999px; padding: 0.3rem 0.85rem; font-size: 0.9rem; font-weight: 600;
 }
-.hero-shots { display: flex; justify-content: center; gap: 1rem; }
+.hero-shots { display: flex; justify-content: center; align-items: flex-start; gap: 1rem; }
 .hero-shots img { width: min(46%, 240px); }
 .hero-shots img:nth-child(2) { margin-top: 2.5rem; }
 
