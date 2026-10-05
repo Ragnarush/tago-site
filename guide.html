@@ -1,0 +1,208 @@
+<!doctype html>
+<html lang="fr-CA">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src 'self'; style-src 'self'; base-uri 'none'; form-action 'none'">
+  <meta name="referrer" content="no-referrer">
+  <title>Guide — TAGO</title>
+  <meta name="description" content="Guide de TAGO : premiers pas, factures, reçus, pointage, kilométrage, fichier pour le comptable et sauvegarde.">
+  <link rel="alternate" hreflang="fr-CA" href="https://tagoapp.ca/guide.html">
+  <link rel="alternate" hreflang="en-CA" href="https://tagoapp.ca/en/guide.html">
+  <link rel="icon" href="assets/img/favicon-32.png" sizes="32x32">
+  <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+  <a class="skip" href="#contenu">Aller au contenu</a>
+
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="./"><img src="assets/img/icon-192.png" alt="" width="32" height="32">TAGO</a>
+      <nav class="site-nav" aria-label="Navigation principale">
+        <a href="./#fonctions">Fonctions</a>
+        <a href="./#vie-privee">Vie privée</a>
+        <a href="./#prix">Prix</a>
+        <a href="guide.html" aria-current="page">Guide</a>
+        <a href="en/guide.html" hreflang="en-CA" lang="en-CA">English</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Section and question ids are a contract with the app's in-app help links:
+       keep them stable and identical in the English page. -->
+  <div class="wrap guide">
+    <nav class="toc" aria-label="Sommaire du guide">
+      <h2>Sommaire</h2>
+      <ol>
+        <li><a href="#start">Premiers pas</a></li>
+        <li><a href="#menu">Où trouver quoi</a></li>
+        <li><a href="#invoices">Factures et paiements</a></li>
+        <li><a href="#expenses">Reçus et dépenses</a></li>
+        <li><a href="#time">Pointage par zone</a></li>
+        <li><a href="#mileage">Kilométrage</a></li>
+        <li><a href="#accountant">Pour le comptable</a></li>
+        <li><a href="#backup">Sauvegarde et nouveau téléphone</a></li>
+        <li><a href="#pro">TAGO Pro</a></li>
+        <li><a href="#faq">Questions fréquentes</a></li>
+      </ol>
+    </nav>
+
+    <article id="contenu">
+      <h1>Guide de TAGO</h1>
+      <p class="section-intro">Les gestes essentiels, dans l'ordre où on en a besoin. Dans ce guide, « ⋮ » désigne le menu en haut de l'écran, et <span class="path">⋮ › Sauvegarde</span> veut dire : ouvrir le menu, puis toucher « Sauvegarde ».</p>
+
+      <section id="start">
+        <h2>1. Premiers pas</h2>
+        <p>Sur l'écran d'Accueil, la carte <strong>Premiers pas</strong> liste les cinq gestes qui rendent TAGO utile : remplir le profil de l'entreprise, ajouter un client, créer un premier document, scanner un premier reçu, et configurer une sauvegarde. Chaque étape ouvre le bon écran et se coche d'elle-même une fois faite.</p>
+        <h3 id="profile">Mettre votre nom, votre logo et vos numéros de taxes sur les factures</h3>
+        <p><span class="path">⋮ › Profil de l'entreprise</span>. Ce qui est inscrit ici apparaît sur chaque soumission et facture : nom, coordonnées, adresse, numéros de TPS, de TVQ, de NEQ et de licence RBQ, et logo.</p>
+        <p>Vos instructions de paiement (adresse Interac, à l'ordre de qui faire le chèque, dépôt direct), l'échéance par défaut, la numérotation et l'apparence du PDF se règlent dans <span class="path">⋮ › Factures et PDF</span>.</p>
+        <div class="tip"><p>Pas encore inscrit aux taxes ? Laissez les numéros vides : vos factures sortiront sans TPS ni TVQ, et TAGO vous avertira à l'approche du seuil de petit fournisseur.</p></div>
+      </section>
+
+      <section id="menu">
+        <h2>2. Où trouver quoi</h2>
+        <p>Quatre onglets en bas de l'écran : <strong>Accueil</strong>, <strong>Revenus</strong>, <strong>Dépenses</strong> et <strong>Pointage</strong>. Tout le reste est dans le menu <span class="path">⋮</span>, en trois groupes :</p>
+        <div class="table-scroll">
+          <table>
+            <thead><tr><th>Groupe</th><th>Entrées</th></tr></thead>
+            <tbody>
+              <tr><td>Mes données</td><td>Profil de l'entreprise, Clients, Fournisseurs, Produits et services</td></tr>
+              <tr><td>Outils</td><td>Pour mon comptable, Sauvegarde, Calendrier</td></tr>
+              <tr><td>Réglages</td><td>Factures et PDF, Pointage automatique, Fiscalité, Préférences, TAGO Pro, À propos</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section id="invoices">
+        <h2>3. Factures et paiements</h2>
+        <h3 id="quote-to-invoice">D'une soumission à la facture</h3>
+        <p>Dans <strong>Revenus</strong>, touchez <strong>Nouveau document</strong> et créez une soumission. Quand le client l'accepte, ouvrez-la et touchez <strong>Marquer accepté</strong> : vous pourrez alors en créer la facture, sans rien retaper.</p>
+        <h3 id="send">Envoyer une facture</h3>
+        <p>Ouvrez le document : <strong>Aperçu PDF</strong> montre ce que le client recevra, et <strong>Envoyer par courriel</strong> passe par l'application de courriel du téléphone. Pour envoyer directement depuis TAGO, branchez votre propre compte Brevo (gratuit) dans <span class="path">⋮ › Factures et PDF</span> ; un écran d'aide explique comment obtenir la clé, et le bouton <strong>Envoyer directement</strong> apparaît alors.</p>
+        <h3 id="payments">Inscrire un paiement, même partiel</h3>
+        <p>Ouvrez la facture et touchez <strong>Inscrire un paiement</strong>. Chaque versement garde sa date, son mode de paiement et son propre reçu PDF ; le solde dû se met à jour.</p>
+        <h3 id="reminder">Relancer un client en retard</h3>
+        <p>Une facture échue passe au statut « en retard ». Ouvrez-la et touchez <strong>Relancer</strong> : le rappel part avec le solde dû.</p>
+        <h3 id="credit-note">Corriger une facture déjà envoyée</h3>
+        <p>Une facture émise ne se modifie plus : c'est la règle, pour que votre registre reste fiable. Ouvrez-la, touchez <strong>Plus d'actions</strong>, puis <strong>Émettre la note de crédit</strong>. Les taxes sont ajustées d'elles-mêmes.</p>
+        <h3 id="duplicate">Refaire la même facture chaque mois</h3>
+        <p>Ouvrez la facture du mois dernier, <strong>Plus d'actions › Dupliquer</strong>, puis ajustez la date et les lignes.</p>
+        <h3 id="income-without-invoice">Un revenu sans facture (plateforme, comptant)</h3>
+        <p>Dans <strong>Revenus</strong>, ouvrez <strong>Revenus sans facture</strong> et ajoutez le montant reçu. Il compte dans vos totaux et dans le fichier du comptable comme un revenu facturé.</p>
+        <h3 id="statement">Envoyer un état de compte</h3>
+        <p><span class="path">⋮ › Clients</span>, ouvrez la fiche du client : l'état de compte montre ce qu'il vous doit à ce jour. Vous pouvez aussi en envoyer à plusieurs clients d'un coup.</p>
+        <h3 id="catalog">Ne plus retaper vos services</h3>
+        <p>Enregistrez-les une fois dans <span class="path">⋮ › Produits et services</span>, puis choisissez-les dans le catalogue en remplissant une facture.</p>
+      </section>
+
+      <section id="expenses">
+        <h2>4. Reçus et dépenses</h2>
+        <h3 id="scan">Scanner un reçu</h3>
+        <p>Sur l'Accueil, touchez <strong>Scanner un reçu</strong>. TAGO lit le commerce, la date et les montants sur l'appareil ; vérifiez-les avant d'enregistrer. Si TAGO soupçonne un doublon, il vous le dit avant.</p>
+        <h3 id="share-pdf">Ajouter une facture reçue par courriel (PDF)</h3>
+        <p>Dans votre application de courriel ou de fichiers, utilisez <strong>Partager</strong> et choisissez TAGO. Vous pouvez partager plusieurs photos ou PDF à la fois.</p>
+        <h3 id="no-receipt">Vous avez perdu le reçu</h3>
+        <p>Dans <strong>Dépenses</strong>, touchez <strong>Ajouter sans pièce</strong> et inscrivez la dépense à la main.</p>
+        <h3 id="business-share">Une dépense en partie personnelle</h3>
+        <p>Pour un cellulaire ou un véhicule qui sert aussi au personnel, indiquez la part d'affaires (en %) dans la dépense : seule cette part sera comptée.</p>
+        <div class="tip"><p>Un retour ou un remboursement s'inscrit comme une dépense négative : il se soustrait de vos dépenses.</p></div>
+      </section>
+
+      <section id="time">
+        <h2>5. Pointage par zone</h2>
+        <h3 id="zones">Créer une zone de travail</h3>
+        <p>Dans <strong>Pointage</strong>, passez à la vue <strong>Zones</strong> et ajoutez une zone : placez-la sur la carte et ajustez son rayon. Vous pourrez ensuite pointer d'un geste dans la vue <strong>Suivi</strong>.</p>
+        <h3 id="auto">Pointer automatiquement à l'arrivée</h3>
+        <p><span class="path">⋮ › Pointage automatique</span>. C'est désactivé par défaut ; TAGO vous demande votre consentement, puis Android vous demande la permission de localisation. La position est traitée sur le téléphone et n'est pas transmise.</p>
+        <h3 id="auto-missed">Le pointage automatique ne s'est pas déclenché</h3>
+        <p>Les causes habituelles : localisation éteinte, économiseur de batterie qui endort TAGO, ou zone trop petite. Vérifiez que la détection est bien activée dans <span class="path">⋮ › Pointage automatique</span>, et qu'Android permet à TAGO d'accéder à la position en tout temps. Une séance manquée se corrige à la main dans <strong>Suivi</strong>.</p>
+        <h3 id="bill-hours">Facturer vos heures pointées</h3>
+        <p>Depuis une séance, touchez <strong>Facturer</strong> : les heures du client sur la période s'ajoutent à une facture. Une séance déjà facturée ne revient pas une deuxième fois.</p>
+      </section>
+
+      <section id="mileage">
+        <h2>6. Kilométrage</h2>
+        <p>Dans <strong>Pointage</strong>, la vue <strong>Trajets</strong> tient un carnet par véhicule : trajets d'affaires, et relevé du compteur au 1<sup>er</sup> janvier et au 31 décembre avec photo. C'est gratuit et sans limite.</p>
+        <p>TAGO suggère des trajets à partir de vos zones pointées. Rien n'est ajouté tout seul : chaque trajet attend votre confirmation.</p>
+        <h3 id="gps-trip">Mesurer un trajet par GPS (Pro)</h3>
+        <p>Touchez <strong>Mesurer un trajet (GPS)</strong>. TAGO peut aussi vous le proposer quand le téléphone détecte que vous roulez ; sans votre toucher, rien n'est mesuré. Seul le total des kilomètres est gardé, jamais le tracé.</p>
+      </section>
+
+      <section id="accountant">
+        <h2>7. Pour le comptable</h2>
+        <p><span class="path">⋮ › Pour mon comptable</span> prépare ce qu'on vous demande en fin d'année ou de trimestre :</p>
+        <ul>
+          <li>un classeur Excel (sommaire en formules, revenus, dépenses) ;</li>
+          <li>les photos et PDF des reçus de la période dans un ZIP ;</li>
+          <li>l'archive de l'année, lisible sans TAGO.</li>
+        </ul>
+        <p>Les taxes à remettre et les retenues estimées (impôt, RRQ, RQAP) se calculent depuis l'Accueil. Les taux de l'année se consultent et se modifient dans <span class="path">⋮ › Fiscalité</span>.</p>
+        <div class="tip"><p>TAGO estime ; il ne remplace pas votre comptable. Faites vérifier vos déclarations.</p></div>
+      </section>
+
+      <section id="backup">
+        <h2>8. Sauvegarde et nouveau téléphone</h2>
+        <h3 id="backup-setup">Sauvegarder vos données</h3>
+        <p><span class="path">⋮ › Sauvegarde</span>. Choisissez d'abord une phrase secrète et notez-la ailleurs : elle chiffre le fichier. Ensuite, sous <strong>Sauvegarde locale</strong>, <strong>Choisir un dossier</strong> (idéalement un dossier synchronisé hors du téléphone), puis <strong>Sauvegarder maintenant</strong>. La <strong>Sauvegarde automatique</strong> refait la sauvegarde à intervalle régulier, et la <strong>Sauvegarde infonuagique</strong> en dépose une copie chiffrée dans votre propre Google Drive.</p>
+        <h3 id="backup-verify">Vérifier une sauvegarde</h3>
+        <p><strong>Vérifier un fichier</strong> contrôle qu'une sauvegarde est intacte et se restaurerait, sans rien écraser sur le téléphone.</p>
+        <h3 id="new-phone">Changer de téléphone</h3>
+        <ol>
+          <li>Sur l'ancien téléphone, faites une sauvegarde à jour.</li>
+          <li>Installez TAGO sur le nouveau, puis <span class="path">⋮ › Sauvegarde › Restaurer depuis un fichier</span> (ou <strong>Voir mes sauvegardes en ligne</strong> si elle est sur Google Drive) et entrez votre phrase secrète.</li>
+          <li>Refaites ensuite trois choses qui ne voyagent pas dans le fichier : votre achat Pro (<strong>Restaurer mes achats</strong>), votre clé Brevo, et le dossier de la sauvegarde automatique.</li>
+        </ol>
+        <h3 id="lost-passphrase">Vous avez oublié la phrase secrète</h3>
+        <p>Personne ne peut ouvrir une sauvegarde sans sa phrase, pas même nous : c'est ce qui la protège. Si l'app est encore installée, choisissez une nouvelle phrase et faites tout de suite une nouvelle sauvegarde.</p>
+      </section>
+
+      <section id="pro">
+        <h2>9. TAGO Pro</h2>
+        <p>Le palier gratuit garde jusqu'à 10 fiches client, 25 documents et 25 reçus. TAGO Pro, un achat unique de 34,99 $ dans <span class="path">⋮ › TAGO Pro</span>, retire ces limites et ajoute la mesure des trajets par GPS, ainsi que la proposition d'un trajet quand le téléphone détecte que vous roulez. Sur un nouveau téléphone, <strong>Restaurer mes achats</strong> le récupère avec le même compte Google.</p>
+      </section>
+
+      <section id="faq">
+        <h2>10. Questions fréquentes</h2>
+        <details id="faq-offline">
+          <summary>TAGO fonctionne-t-il sans Internet ?</summary>
+          <div><p>Oui. Tout se fait sur le téléphone. Seules la carte des zones, l'envoi direct de courriels et la copie sur Google Drive ont besoin du réseau.</p></div>
+        </details>
+        <details id="faq-account">
+          <summary>Dois-je créer un compte ?</summary>
+          <div><p>Non. TAGO n'a ni compte ni serveur. Vos données restent sur votre téléphone et dans les fichiers que vous exportez.</p></div>
+        </details>
+        <details id="faq-registration">
+          <summary>Quand dois-je m'inscrire aux taxes ?</summary>
+          <div><p>En règle générale, quand vos revenus taxables dépassent 30 000 $ sur quatre trimestres consécutifs (seuil de petit fournisseur). TAGO vous avertit quand vous en approchez. Vérifiez votre situation auprès de Revenu Québec ou d'un comptable.</p></div>
+        </details>
+        <details id="faq-other-provinces">
+          <summary>TAGO fonctionne-t-il hors du Québec ?</summary>
+          <div><p>Pas encore : les taxes et retenues calculées sont celles du Québec. Les autres provinces sont en préparation.</p></div>
+        </details>
+        <details id="faq-iphone">
+          <summary>Y a-t-il une version iPhone ?</summary>
+          <div><p>Elle est prévue, mais pas encore disponible.</p></div>
+        </details>
+        <details id="faq-contact">
+          <summary>J'ai trouvé un bogue ou j'ai une idée</summary>
+          <div><p>Écrivez-nous à <a href="mailto:travailleurautonomego@gmail.com">travailleurautonomego@gmail.com</a>.</p></div>
+        </details>
+      </section>
+    </article>
+  </div>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <p>© 2026 Ragnarush — Québec, Canada. Ce site n'utilise ni témoins (cookies), ni traceurs, ni scripts.</p>
+      <ul>
+        <li><a href="https://ragnarush.github.io/legal/tago/privacy.html">Confidentialité</a></li>
+        <li><a href="https://ragnarush.github.io/legal/tago/terms.html">Conditions</a></li>
+        <li><a href="mailto:travailleurautonomego@gmail.com">Nous joindre</a></li>
+      </ul>
+    </div>
+  </footer>
+</body>
+</html>

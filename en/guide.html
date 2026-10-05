@@ -1,0 +1,208 @@
+<!doctype html>
+<html lang="en-CA">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src 'self'; style-src 'self'; base-uri 'none'; form-action 'none'">
+  <meta name="referrer" content="no-referrer">
+  <title>Guide — TAGO</title>
+  <meta name="description" content="TAGO guide: getting started, invoices, receipts, time tracking, mileage, the accountant's file and backups.">
+  <link rel="alternate" hreflang="fr-CA" href="https://tagoapp.ca/guide.html">
+  <link rel="alternate" hreflang="en-CA" href="https://tagoapp.ca/en/guide.html">
+  <link rel="icon" href="../assets/img/favicon-32.png" sizes="32x32">
+  <link rel="apple-touch-icon" href="../assets/img/apple-touch-icon.png">
+  <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+  <a class="skip" href="#content">Skip to content</a>
+
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="./"><img src="../assets/img/icon-192.png" alt="" width="32" height="32">TAGO</a>
+      <nav class="site-nav" aria-label="Main navigation">
+        <a href="./#features">Features</a>
+        <a href="./#privacy">Privacy</a>
+        <a href="./#pricing">Pricing</a>
+        <a href="guide.html" aria-current="page">Guide</a>
+        <a href="../guide.html" hreflang="fr-CA" lang="fr-CA">Français</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Section and question ids are a contract with the app's in-app help links:
+       keep them stable and identical in the French page. -->
+  <div class="wrap guide">
+    <nav class="toc" aria-label="Guide contents">
+      <h2>Contents</h2>
+      <ol>
+        <li><a href="#start">Getting started</a></li>
+        <li><a href="#menu">Where to find things</a></li>
+        <li><a href="#invoices">Invoices and payments</a></li>
+        <li><a href="#expenses">Receipts and expenses</a></li>
+        <li><a href="#time">Time tracking by zone</a></li>
+        <li><a href="#mileage">Mileage</a></li>
+        <li><a href="#accountant">For the accountant</a></li>
+        <li><a href="#backup">Backup and new phone</a></li>
+        <li><a href="#pro">TAGO Pro</a></li>
+        <li><a href="#faq">Frequently asked questions</a></li>
+      </ol>
+    </nav>
+
+    <article id="content">
+      <h1>TAGO guide</h1>
+      <p class="section-intro">The essential steps, in the order you'll need them. In this guide, “⋮” is the menu at the top of the screen, and <span class="path">⋮ › Backup</span> means: open the menu, then tap “Backup”.</p>
+
+      <section id="start">
+        <h2>1. Getting started</h2>
+        <p>On the Home screen, the <strong>Getting started</strong> card lists the five steps that make TAGO useful: fill in the company profile, add a client, create a first document, scan a first receipt, and set up a backup. Each step opens the right screen and checks itself off once done.</p>
+        <h3 id="profile">Put your name, logo and tax numbers on your invoices</h3>
+        <p><span class="path">⋮ › Company profile</span>. What you enter here appears on every quote and invoice: name, contact details, address, GST, QST, NEQ and RBQ licence numbers, and logo.</p>
+        <p>Your payment instructions (Interac address, who cheques are payable to, direct deposit), the default due date, numbering and the PDF's look are set in <span class="path">⋮ › Invoices and PDF</span>.</p>
+        <div class="tip"><p>Not registered for taxes yet? Leave the numbers empty: your invoices will go out without GST or QST, and TAGO will warn you as you approach the small-supplier threshold.</p></div>
+      </section>
+
+      <section id="menu">
+        <h2>2. Where to find things</h2>
+        <p>Four tabs at the bottom of the screen: <strong>Home</strong>, <strong>Revenue</strong>, <strong>Expenses</strong> and <strong>Time tracking</strong>. Everything else is in the <span class="path">⋮</span> menu, in three groups:</p>
+        <div class="table-scroll">
+          <table>
+            <thead><tr><th>Group</th><th>Entries</th></tr></thead>
+            <tbody>
+              <tr><td>My data</td><td>Company profile, Clients, Suppliers, Products and services</td></tr>
+              <tr><td>Tools</td><td>For my accountant, Backup, Calendar</td></tr>
+              <tr><td>Settings</td><td>Invoices and PDF, Automatic time tracking, Tax rates, Preferences, TAGO Pro, About</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section id="invoices">
+        <h2>3. Invoices and payments</h2>
+        <h3 id="quote-to-invoice">From a quote to the invoice</h3>
+        <p>In <strong>Revenue</strong>, tap <strong>New document</strong> and create a quote. When the client accepts it, open it and tap <strong>Mark accepted</strong>: you can then create its invoice without retyping anything.</p>
+        <h3 id="send">Send an invoice</h3>
+        <p>Open the document: <strong>PDF preview</strong> shows what the client will receive, and <strong>Send by email</strong> goes through your phone's email app. To send straight from TAGO, connect your own Brevo account (free) in <span class="path">⋮ › Invoices and PDF</span>; a help screen explains how to get the key, and a <strong>Send directly</strong> button then appears.</p>
+        <h3 id="payments">Record a payment, even a partial one</h3>
+        <p>Open the invoice and tap <strong>Record a payment</strong>. Each payment keeps its date, its method and its own PDF receipt; the balance due updates.</p>
+        <h3 id="reminder">Remind a late client</h3>
+        <p>An invoice past its due date becomes “overdue”. Open it and tap <strong>Send a reminder</strong>: the reminder goes out with the balance due.</p>
+        <h3 id="credit-note">Correct an invoice already sent</h3>
+        <p>An issued invoice can no longer be edited: that's the rule that keeps your records reliable. Open it, tap <strong>More actions</strong>, then <strong>Issue the credit note</strong>. Taxes are adjusted for you.</p>
+        <h3 id="duplicate">Make the same invoice every month</h3>
+        <p>Open last month's invoice, <strong>More actions › Duplicate</strong>, then adjust the date and the lines.</p>
+        <h3 id="income-without-invoice">Income without an invoice (platform, cash)</h3>
+        <p>In <strong>Revenue</strong>, open <strong>Income without an invoice</strong> and add the amount received. It counts in your totals and in the accountant's file like invoiced income.</p>
+        <h3 id="statement">Send a statement of account</h3>
+        <p><span class="path">⋮ › Clients</span>, open the client's record: the statement shows what they owe you to date. You can also send statements to several clients at once.</p>
+        <h3 id="catalog">Stop retyping your services</h3>
+        <p>Save them once in <span class="path">⋮ › Products and services</span>, then pick them from the catalogue when filling in an invoice.</p>
+      </section>
+
+      <section id="expenses">
+        <h2>4. Receipts and expenses</h2>
+        <h3 id="scan">Scan a receipt</h3>
+        <p>On Home, tap <strong>Scan a receipt</strong>. TAGO reads the merchant, date and amounts on the device; check them before saving. If TAGO suspects a duplicate, it tells you first.</p>
+        <h3 id="share-pdf">Add an invoice you received by email (PDF)</h3>
+        <p>In your email or files app, use <strong>Share</strong> and pick TAGO. You can share several photos or PDFs at once.</p>
+        <h3 id="no-receipt">You lost the receipt</h3>
+        <p>In <strong>Expenses</strong>, tap <strong>Add without receipt</strong> and enter the expense by hand.</p>
+        <h3 id="business-share">An expense that's partly personal</h3>
+        <p>For a cell phone or vehicle you also use personally, enter the business-use share (in %) on the expense: only that share is counted.</p>
+        <div class="tip"><p>A return or refund is entered as a negative expense: it's subtracted from your expenses.</p></div>
+      </section>
+
+      <section id="time">
+        <h2>5. Time tracking by zone</h2>
+        <h3 id="zones">Create a work zone</h3>
+        <p>In <strong>Time tracking</strong>, switch to the <strong>Zones</strong> view and add a zone: place it on the map and adjust its radius. You can then clock in with a tap in the <strong>Tracking</strong> view.</p>
+        <h3 id="auto">Clock in automatically on arrival</h3>
+        <p><span class="path">⋮ › Automatic time tracking</span>. It's off by default; TAGO asks for your consent, then Android asks for location permission. Your location is processed on the phone and never sent.</p>
+        <h3 id="auto-missed">Automatic tracking didn't trigger</h3>
+        <p>The usual causes: location turned off, a battery saver putting TAGO to sleep, or a zone that's too small. Check that detection is turned on in <span class="path">⋮ › Automatic time tracking</span>, and that Android lets TAGO use your location all the time. A missed session can be fixed by hand in <strong>Tracking</strong>.</p>
+        <h3 id="bill-hours">Bill your tracked hours</h3>
+        <p>From a session, tap <strong>Bill</strong>: the client's hours over the period are added to an invoice. A session already billed won't come back a second time.</p>
+      </section>
+
+      <section id="mileage">
+        <h2>6. Mileage</h2>
+        <p>In <strong>Time tracking</strong>, the <strong>Trips</strong> view keeps a log per vehicle: business trips, and the odometer reading on January 1 and December 31 with a photo. It's free and unlimited.</p>
+        <p>TAGO suggests trips from your tracked zones. Nothing is added on its own: each trip waits for your confirmation.</p>
+        <h3 id="gps-trip">Measure a trip by GPS (Pro)</h3>
+        <p>Tap <strong>Measure a trip (GPS)</strong>. TAGO can also offer it when the phone detects you're driving; without your tap, nothing is measured. Only the total kilometres are kept, never the route.</p>
+      </section>
+
+      <section id="accountant">
+        <h2>7. For the accountant</h2>
+        <p><span class="path">⋮ › For my accountant</span> prepares what you're asked for at the end of the year or quarter:</p>
+        <ul>
+          <li>an Excel workbook (summary in formulas, revenue, expenses);</li>
+          <li>the period's receipt photos and PDFs in one ZIP;</li>
+          <li>the year's archive, readable without TAGO.</li>
+        </ul>
+        <p>Taxes to remit and estimated deductions (income tax, QPP, QPIP) are calculated from Home. The year's rates can be checked and edited in <span class="path">⋮ › Tax rates</span>.</p>
+        <div class="tip"><p>TAGO estimates; it doesn't replace your accountant. Have your returns checked.</p></div>
+      </section>
+
+      <section id="backup">
+        <h2>8. Backup and new phone</h2>
+        <h3 id="backup-setup">Back up your data</h3>
+        <p><span class="path">⋮ › Backup</span>. First choose a passphrase and write it down elsewhere: it encrypts the file. Then, under <strong>Local backup</strong>, <strong>Choose a folder</strong> (ideally one synced off the phone), then <strong>Back up now</strong>. <strong>Automatic backup</strong> repeats it at regular intervals, and <strong>Cloud backup</strong> puts an encrypted copy in your own Google Drive.</p>
+        <h3 id="backup-verify">Check a backup</h3>
+        <p><strong>Check a file</strong> confirms a backup is intact and would restore, without overwriting anything on the phone.</p>
+        <h3 id="new-phone">Switch phones</h3>
+        <ol>
+          <li>On the old phone, make an up-to-date backup.</li>
+          <li>Install TAGO on the new one, then <span class="path">⋮ › Backup › Restore from a file</span> (or <strong>See my online backups</strong> if it's on Google Drive) and enter your passphrase.</li>
+          <li>Then redo three things that don't travel in the file: your Pro purchase (<strong>Restore my purchases</strong>), your Brevo key, and the automatic backup folder.</li>
+        </ol>
+        <h3 id="lost-passphrase">You forgot the passphrase</h3>
+        <p>No one can open a backup without its passphrase, not even us: that's what protects it. If the app is still installed, choose a new passphrase and make a new backup right away.</p>
+      </section>
+
+      <section id="pro">
+        <h2>9. TAGO Pro</h2>
+        <p>The free tier keeps up to 10 client records, 25 documents and 25 receipts. TAGO Pro, a one-time $34.99 purchase in <span class="path">⋮ › TAGO Pro</span>, removes these limits and adds GPS trip measuring, plus a trip offered when the phone detects you're driving. On a new phone, <strong>Restore my purchases</strong> brings it back with the same Google account.</p>
+      </section>
+
+      <section id="faq">
+        <h2>10. Frequently asked questions</h2>
+        <details id="faq-offline">
+          <summary>Does TAGO work without the Internet?</summary>
+          <div><p>Yes. Everything happens on the phone. Only the zone map, direct email sending and the Google Drive copy need the network.</p></div>
+        </details>
+        <details id="faq-account">
+          <summary>Do I need to create an account?</summary>
+          <div><p>No. TAGO has no account and no server. Your data stays on your phone and in the files you export.</p></div>
+        </details>
+        <details id="faq-registration">
+          <summary>When do I need to register for taxes?</summary>
+          <div><p>As a general rule, when your taxable revenue goes over $30,000 over four consecutive quarters (the small-supplier threshold). TAGO warns you as you approach it. Check your situation with Revenu Québec or an accountant.</p></div>
+        </details>
+        <details id="faq-other-provinces">
+          <summary>Does TAGO work outside Quebec?</summary>
+          <div><p>Not yet: the taxes and deductions it calculates are Quebec's. Other provinces are in the works.</p></div>
+        </details>
+        <details id="faq-iphone">
+          <summary>Is there an iPhone version?</summary>
+          <div><p>It's planned, but not available yet.</p></div>
+        </details>
+        <details id="faq-contact">
+          <summary>I found a bug or have an idea</summary>
+          <div><p>Write to us at <a href="mailto:travailleurautonomego@gmail.com">travailleurautonomego@gmail.com</a>.</p></div>
+        </details>
+      </section>
+    </article>
+  </div>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <p>© 2026 Ragnarush — Quebec, Canada. This site uses no cookies, no trackers and no scripts.</p>
+      <ul>
+        <li><a href="https://ragnarush.github.io/legal/tago/privacy-en.html">Privacy</a></li>
+        <li><a href="https://ragnarush.github.io/legal/tago/terms.html" hreflang="fr-CA">Terms (French)</a></li>
+        <li><a href="mailto:travailleurautonomego@gmail.com">Contact</a></li>
+      </ul>
+    </div>
+  </footer>
+</body>
+</html>
