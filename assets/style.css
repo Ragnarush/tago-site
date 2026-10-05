@@ -155,7 +155,7 @@ th { font-weight: 700; }
 
 /* --- Guide --- */
 
-.guide { display: grid; gap: 2.5rem; grid-template-columns: 240px minmax(0, 1fr); padding: 2.5rem 0 3rem; }
+.guide { display: grid; gap: 2.5rem; grid-template-columns: 240px minmax(0, 1fr); padding: 2.5rem var(--gutter) 3rem; }
 .toc { position: sticky; top: 1rem; align-self: start; font-size: 0.95rem; }
 .toc h2 { font-size: 1rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--muted); }
 .toc ol { margin: 0; padding-left: 1.8rem; }
