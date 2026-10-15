@@ -42,8 +42,8 @@
     </div>
   </header>
 
-  <!-- Section and question ids are a contract with the app's in-app help links:
-       keep them stable and identical in the French page. -->
+  <!-- Section and question ids are a contract: the app's planned in-app help will link to
+       them. Keep them stable and identical in the French page. -->
   <div class="wrap guide">
     <nav class="toc" aria-label="Guide contents">
       <h2>Contents</h2>
@@ -67,9 +67,10 @@
 
       <section id="start">
         <h2>1. Getting started</h2>
-        <p>On the Home screen, the <strong>Getting started</strong> card lists the five steps that make TAGO useful: fill in the company profile, add a client, create a first document, scan a first receipt, and set up a backup. Each step opens the right screen and checks itself off once done.</p>
+        <p>On first launch, TAGO asks <strong>Where do you work?</strong>: your province sets the taxes on your invoices and the estimate of your deductions. Then, on the Home screen, the <strong>Getting started</strong> card lists the five steps that make TAGO useful: enter your business and your province, add a first client, create a first document, scan a first receipt (or, if you track your hours, create a time-tracking zone), and set up a backup. Each step opens the right screen and checks itself off once done.</p>
         <h3 id="profile">Put your name, logo and tax numbers on your invoices</h3>
         <p><span class="path">⋮ › Company profile</span>. What you enter here appears on every quote and invoice: name, contact details, address, province or territory (taxes), tax numbers (GST/HST and, depending on the province, QST, PST or RST), NEQ and RBQ licence in Quebec, and logo.</p>
+        <p>If you change provinces or register for taxes along the way, TAGO asks since when: the profile's <strong>Tax history</strong> card keeps your previous profile, and each invoice, income or receipt is counted with the profile in force on its date.</p>
         <p>Your payment instructions (Interac address, who cheques are payable to, direct deposit), the default due date, numbering and the PDF's look are set in <span class="path">⋮ › Invoices and PDF</span>.</p>
         <div class="tip"><p>Not registered for taxes yet? Leave the numbers empty: your invoices will go out without tax, and TAGO will warn you as you approach the small-supplier threshold.</p></div>
       </section>
@@ -83,10 +84,11 @@
             <tbody>
               <tr><td>My data</td><td>Company profile, Clients, Suppliers, Products and services</td></tr>
               <tr><td>Tools</td><td>For my accountant, Backup, Calendar</td></tr>
-              <tr><td>Settings</td><td>Invoices and PDF, Automatic time tracking, Tax rates, Preferences, TAGO Pro, About</td></tr>
+              <tr><td>Settings</td><td>Invoices and PDF, Automatic time tracking, Taxes and deductions, Preferences, TAGO Pro, About</td></tr>
             </tbody>
           </table>
         </div>
+        <p>In lists, the magnifying glass at the top of the screen searches for a supplier, a client, a number or an amount. Press and hold a row to select it, then drag to select several: the top bar then offers to select all, share (for a spreadsheet or a calendar) or delete, with <strong>Undo</strong> to take it back.</p>
       </section>
 
       <section id="invoices">
@@ -94,44 +96,45 @@
         <h3 id="quote-to-invoice">From a quote to the invoice</h3>
         <p>In <strong>Revenue</strong>, tap <strong>New document</strong> and create a quote. When the client accepts it, open it and tap <strong>Mark accepted</strong>: you can then create its invoice without retyping anything.</p>
         <h3 id="send">Send an invoice</h3>
-        <p>Open the document, then <strong>More actions</strong> (the <span class="path">⋮</span> at the bottom left): <strong>PDF preview</strong> shows what the client will receive, and <strong>Send by email</strong> goes through your phone's email app. To send straight from TAGO, connect your own Brevo account (free) in <span class="path">⋮ › Invoices and PDF</span>; a help screen explains how to get the key, and a <strong>Send directly</strong> button then appears.</p>
+        <p>Open the document: on a draft, the main button, <strong>Send by email</strong>, goes through your phone's email app. <strong>PDF preview</strong> shows what the client will receive; if it isn't next to it, it's under <strong>More actions</strong> (the <span class="path">⋮</span> at the bottom left). To send straight from TAGO, connect your own Brevo account (free) in <span class="path">⋮ › Invoices and PDF</span>; a help screen explains how to get the key, and <strong>Send directly (Brevo)</strong> is then added to the actions.</p>
         <h3 id="payments">Record a payment, even a partial one</h3>
         <p>Open the invoice and tap <strong>Record a payment</strong>. Each payment keeps its date, its method and its own PDF receipt; the balance due updates.</p>
         <h3 id="reminder">Remind a late client</h3>
-        <p>An invoice past its due date becomes “overdue”. Open it and tap <strong>Send a reminder</strong>: the reminder goes out with the balance due.</p>
+        <p>An invoice past its due date becomes “Overdue”. Open it and tap <strong>Send a reminder</strong>: the reminder goes out with the balance due.</p>
         <h3 id="credit-note">Correct an invoice already sent</h3>
         <p>An issued invoice can no longer be edited: that's the rule that keeps your records reliable. Open it, tap <strong>More actions</strong>, then <strong>Issue a credit note</strong>. Taxes are adjusted for you.</p>
         <h3 id="duplicate">Make the same invoice every month</h3>
         <p>Open last month's invoice, <strong>More actions › Duplicate</strong>, then adjust the date and the lines.</p>
         <h3 id="income-without-invoice">Income without an invoice (platform, cash)</h3>
-        <p>In <strong>Revenue</strong>, open <strong>Income without an invoice</strong> and add the amount received. It counts in your totals and in the accountant's file like invoiced income.</p>
+        <p>In <strong>Revenue</strong>, open <strong>Income without an invoice</strong> and tap <strong>Add income</strong>. It counts in the accountant's file and toward the small-supplier threshold, but stays out of the invoiced total.</p>
         <h3 id="statement">Send a statement of account</h3>
-        <p><span class="path">⋮ › Clients</span>, open the client's record: the statement shows what they owe you to date. You can also send statements to several clients at once.</p>
+        <p><span class="path">⋮ › Clients</span>, open the client's record and tap <strong>Statement of account</strong>: it shows what the client owes you to date. The <strong>Statements of account</strong> button on the client list sends them to several clients at once.</p>
         <h3 id="catalog">Stop retyping your services</h3>
-        <p>Save them once in <span class="path">⋮ › Products and services</span>, then pick them from the catalogue when filling in an invoice.</p>
+        <p>Save them once in <span class="path">⋮ › Products and services</span>, then, when filling in an invoice, tap <strong>From catalog</strong>.</p>
       </section>
 
       <section id="expenses">
         <h2>4. Receipts and expenses</h2>
         <h3 id="scan">Scan a receipt</h3>
-        <p>On Home, tap <strong>Scan a receipt</strong>. TAGO reads the merchant, date and amounts on the device; check them before saving. If TAGO suspects a duplicate, it tells you first.</p>
+        <p>On Home or in <strong>Expenses</strong>, tap <strong>Scan a receipt</strong>. TAGO reads the merchant, date and amounts on the device; check them before saving. If TAGO suspects a duplicate, it tells you first.</p>
         <h3 id="share-pdf">Add an invoice you received by email (PDF)</h3>
         <p>In your email or files app, use <strong>Share</strong> and pick TAGO. You can share several photos or PDFs at once.</p>
         <h3 id="no-receipt">You lost the receipt</h3>
-        <p>In <strong>Expenses</strong>, tap <strong>Add without receipt</strong> and enter the expense by hand.</p>
+        <p>In <strong>Expenses</strong>, under “No receipt?”, tap <strong>Add without receipt</strong> and enter the expense by hand.</p>
         <h3 id="business-share">An expense that's partly personal</h3>
-        <p>For a cell phone or vehicle you also use personally, enter the business-use share (in %) on the expense: only that share is counted.</p>
-        <div class="tip"><p>A return or refund is entered as a negative expense: it's subtracted from your expenses.</p></div>
+        <p>For a cell phone or vehicle you also use personally, open the expense and fill in <strong>Business use (%)</strong>, under “For your accountant”. The expense amount stays whole; the estimates of your income and of your tax credits count only that share, and the accountant's workbook shows the percentage.</p>
+        <div class="tip"><p>A return or refund is entered with <strong>This is a return or a refund</strong>: it's subtracted from your expenses.</p></div>
       </section>
 
       <section id="time">
         <h2>5. Time tracking by zone</h2>
         <h3 id="zones">Create a work zone</h3>
-        <p>In <strong>Time tracking</strong>, switch to the <strong>Zones</strong> view and add a zone: place it on the map and adjust its radius. You can then clock in with a tap in the <strong>Tracking</strong> view.</p>
+        <p>In <strong>Time tracking</strong>, switch to the <strong>Zones</strong> view and tap <strong>Add a zone</strong>: place it on the map and adjust its radius. You can then clock in with a tap in the <strong>Tracking</strong> view (<strong>Clock in at…</strong>), with no location permission: clocking in by hand reads no position.</p>
         <h3 id="auto">Clock in automatically on arrival</h3>
         <p><span class="path">⋮ › Automatic time tracking</span>. It's off by default; TAGO asks for your consent, then Android asks for location permission. Your location is processed on the phone and never sent.</p>
         <h3 id="auto-missed">Automatic tracking didn't trigger</h3>
-        <p>The usual causes: location turned off, a battery saver putting TAGO to sleep, or a zone that's too small. Check that detection is turned on in <span class="path">⋮ › Automatic time tracking</span>, and that Android lets TAGO use your location all the time. A missed session can be fixed by hand in <strong>Tracking</strong>.</p>
+        <p>The usual causes: location turned off, a battery saver putting TAGO to sleep, or a zone that's too small. Check that detection is turned on in <span class="path">⋮ › Automatic time tracking</span>, and that Android lets TAGO use your location all the time. A missed session can be added by hand with <strong>Add a session</strong>, in <strong>Tracking</strong>.</p>
+        <p><strong>Tracking</strong> keeps the last five sessions; <strong>See full history</strong> opens <strong>Time history</strong>, filterable by zone and period, with the time tracked. Tap a session to correct it, or press and hold to select several and share them as CSV or .ics, or delete them.</p>
         <h3 id="bill-hours">Bill your tracked hours</h3>
         <p>In <strong>Tracking</strong>, under “Recent history”, tap <strong>Bill</strong> on a finished session: its hours are added to a new document or to a draft you've already started, and you set the rate on the next screen. The session then shows <strong>Billed</strong> and can't be billed twice.</p>
         <p>To bill all of a client's hours over a period at once, start from the invoice instead: choose the client, then tap <strong>Import hours for a period</strong> in the editor and tick the sessions to add.</p>
@@ -140,9 +143,9 @@
       <section id="mileage">
         <h2>6. Mileage</h2>
         <p>In <strong>Time tracking</strong>, the <strong>Trips</strong> view keeps a log per vehicle: business trips, and the odometer reading on January 1 and December 31 with a photo. It's free and unlimited.</p>
-        <p>TAGO suggests trips from your tracked zones. Nothing is added on its own: each trip waits for your confirmation.</p>
+        <p>Under <strong>Possible trips</strong>, TAGO suggests trips from your tracked zones. Nothing is added on its own: each trip waits for your confirmation. The trip list filters by month and by vehicle; press and hold to select trips and share them as CSV. The year's log goes to your accountant as an .xlsx from <span class="path">⋮ › For my accountant</span>.</p>
         <h3 id="gps-trip">Measure a trip by GPS (Pro)</h3>
-        <p>Tap <strong>Measure a trip (GPS)</strong>. TAGO can also offer it when the phone detects you're driving; without your tap, nothing is measured. Only the total kilometres are kept, never the route.</p>
+        <p>Tap <strong>Measure a trip (GPS)</strong>. TAGO can also offer it when the phone detects you're driving (<strong>Offer a trip when I drive</strong>, in <span class="path">⋮ › Automatic time tracking</span>); without your tap, nothing is measured. Only the total kilometres are kept, never the route.</p>
       </section>
 
       <section id="accountant">
@@ -151,23 +154,24 @@
         <ul>
           <li>an Excel workbook (summary in formulas, revenue, expenses);</li>
           <li>the period's receipt photos and PDFs in one ZIP;</li>
+          <li>the year's mileage log (.xlsx);</li>
           <li>the year's archive, readable without TAGO.</li>
         </ul>
-        <p>Taxes to remit and, in Quebec, estimated deductions (income tax, QPP, QPIP) are calculated from Home. The year's rates can be checked and edited in <span class="path">⋮ › Tax rates</span>.</p>
+        <p>On Home, once your tax numbers and filing frequency are entered, the <strong>Your GST/QST to date</strong> card (GST/HST outside Quebec) shows the net tax for the current period and its due date. <strong>Deductions calculation</strong> estimates the income tax and contributions to set aside, in every province (QPP and QPIP in Quebec, CPP elsewhere). Your situation, your deductions and the year's rates can be checked and edited in <span class="path">⋮ › Taxes and deductions</span>.</p>
         <div class="tip"><p>TAGO estimates; it doesn't replace your accountant. Have your returns checked.</p></div>
       </section>
 
       <section id="backup">
         <h2>8. Backup and new phone</h2>
         <h3 id="backup-setup">Back up your data</h3>
-        <p><span class="path">⋮ › Backup</span>. First choose a passphrase and write it down elsewhere: it encrypts the file. Then, under <strong>Local backup</strong>, <strong>Choose a folder</strong> (ideally one synced off the phone), then <strong>Back up now</strong>. <strong>Automatic backup</strong> repeats it at regular intervals, and <strong>Cloud backup</strong> puts an encrypted copy in your own Google Drive.</p>
+        <p><span class="path">⋮ › Backup</span>. First choose a passphrase and write it down elsewhere: it encrypts the file. As soon as it's saved, TAGO writes an encrypted backup every day to the phone's Documents/TAGO folder (Android 10 and later), plus a light archive, without photos, every hour. A backup that stays on the phone is lost with it: under <strong>Local backup</strong>, use <strong>Change folder</strong> (or <strong>Choose a folder</strong>) for a folder synced off the phone, or turn on <strong>Cloud backup</strong>, which puts an encrypted copy in your own Google Drive. <strong>Back up now</strong> makes one on the spot, and <strong>Automatic backup</strong> picks where the regular backups go.</p>
         <h3 id="backup-verify">Check a backup</h3>
-        <p><strong>Check a file</strong> confirms a backup is intact and would restore, without overwriting anything on the phone.</p>
+        <p><strong>Check a file</strong> (or <strong>Check an online backup</strong>) confirms a backup is intact and would restore, without overwriting anything on the phone. TAGO also does it on its own once a month for your latest backup, and a card on Home warns you if it's damaged.</p>
         <h3 id="new-phone">Switch phones</h3>
         <ol>
           <li>On the old phone, make an up-to-date backup.</li>
-          <li>Install TAGO on the new one, then <span class="path">⋮ › Backup › Restore from a file</span> (or <strong>See my online backups</strong> if it's on Google Drive) and enter your passphrase.</li>
-          <li>Then redo three things that don't travel in the file: your Pro purchase (<strong>Restore my purchases</strong>), your Brevo key, and the automatic backup folder.</li>
+          <li>Install TAGO on the new one. On first launch, <strong>Restore a backup</strong>; otherwise, <span class="path">⋮ › Backup › Restore from a file</span> (or <strong>See my online backups</strong> if it's on Google Drive). Enter your passphrase.</li>
+          <li>Then redo what doesn't travel in the file: your Pro purchase (<strong>Restore my purchases</strong>), your Brevo key, and where your backups go (check <span class="path">⋮ › Backup</span>).</li>
         </ol>
         <h3 id="lost-passphrase">You forgot the passphrase</h3>
         <p>No one can open a backup without its passphrase, not even us: that's what protects it. If the app is still installed, choose a new passphrase and make a new backup right away.</p>
@@ -182,7 +186,7 @@
         <h2>10. Frequently asked questions</h2>
         <details id="faq-offline">
           <summary>Does TAGO work without the Internet?</summary>
-          <div><p>Yes. Everything happens on the phone. Only the zone map, direct email sending and the Google Drive copy need the network.</p></div>
+          <div><p>Yes. Everything happens on the phone. Only the zone map, direct email sending, the Google Drive copy and buying TAGO Pro need the network.</p></div>
         </details>
         <details id="faq-account">
           <summary>Do I need to create an account?</summary>

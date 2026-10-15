@@ -11,5 +11,6 @@ Plain HTML and CSS only: no build step, no JavaScript, no external fonts, no
 analytics. Every page sets a Content-Security-Policy that only allows its own
 styles and images.
 
-The section and question `id`s in `guide.html` and `en/guide.html` are linked
-from the app's in-app help: keep them stable and identical in both languages.
+The section and question `id`s in `guide.html` and `en/guide.html` are a
+contract: the app's planned in-app help (one "?" per screen) will link to
+them. Keep them stable and identical in both languages.
