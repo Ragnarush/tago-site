@@ -1,0 +1,198 @@
+<!doctype html>
+<html lang="en-CA">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src 'self'; style-src 'self'; base-uri 'none'; form-action 'none'">
+  <meta name="referrer" content="no-referrer">
+  <title>Sending your invoices with Brevo — TAGO</title>
+  <meta name="description" content="Create a free Brevo account, authenticate your domain and generate the API key that lets TAGO send your invoices itself. Illustrated walkthrough.">
+  <link rel="canonical" href="https://tagoapp.ca/en/brevo.html">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="TAGO">
+  <meta property="og:url" content="https://tagoapp.ca/en/brevo.html">
+  <meta property="og:title" content="Sending your invoices with Brevo — TAGO">
+  <meta property="og:description" content="Create a free Brevo account, authenticate your domain and generate the API key that lets TAGO send your invoices itself. Illustrated walkthrough.">
+  <meta property="og:image" content="https://tagoapp.ca/assets/img/og-en.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="TAGO on a phone: home screen and invoice">
+  <meta property="og:locale" content="en_CA">
+  <meta property="og:locale:alternate" content="fr_CA">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="alternate" hreflang="fr-CA" href="https://tagoapp.ca/brevo.html">
+  <link rel="alternate" hreflang="en-CA" href="https://tagoapp.ca/en/brevo.html">
+  <link rel="icon" href="../assets/img/favicon-32.png" sizes="32x32">
+  <link rel="apple-touch-icon" href="../assets/img/apple-touch-icon.png">
+  <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+  <a class="skip" href="#content">Skip to content</a>
+
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="./"><img src="../assets/img/icon-192.png" alt="" width="32" height="32">TAGO</a>
+      <nav class="site-nav" aria-label="Main navigation">
+        <a href="./#features">Features</a>
+        <a href="./#privacy">Privacy</a>
+        <a href="./#pricing">Pricing</a>
+        <a href="guide.html">Guide</a>
+        <a href="../brevo.html" hreflang="fr-CA" lang="fr-CA">Français</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="wrap guide">
+    <nav class="toc" aria-label="Contents">
+      <h2>Contents</h2>
+      <ol>
+        <li><a href="#account">Create the account</a></li>
+        <li><a href="#with-domain">With your domain</a></li>
+        <li><a href="#without-domain">Without a domain</a></li>
+        <li><a href="#api-key">The API key</a></li>
+        <li><a href="#in-tago">In TAGO</a></li>
+        <li><a href="#trouble">If it doesn't work</a></li>
+      </ol>
+    </nav>
+
+    <article id="content">
+      <h1>Sending your invoices with Brevo</h1>
+      <p class="section-intro">With nothing set up, TAGO sends your documents through your phone's email app. With your own <strong>Brevo</strong> account (free), TAGO sends them itself: it retries on its own after a temporary outage and records the sending on the document. This page shows every screen as it was on October 25, 2026. Brevo sometimes changes its interface: if a label has moved, look for the closest word.</p>
+      <div class="tip"><p>TAGO has no server: the key stays on your phone, and sending goes straight from your phone to Brevo (France, European Union). Brevo receives the PDF and the client's name and email; see <a href="law-25.html#hors-quebec">what that means under Act 25</a>.</p></div>
+
+      <section id="account">
+        <h2>1. Create the Brevo account</h2>
+        <p>Go to <a href="https://www.brevo.com/">brevo.com</a> and sign up, with your email or with <strong>Sign up with Google</strong>. Brevo then asks for your business name and address.</p>
+        <figure>
+          <img src="../assets/img/brevo-01-en.webp" width="1200" height="643" alt="Brevo sign-up page: Sign up with Google button, or email and password fields." loading="lazy">
+          <figcaption>Signing up: a Google account or an email address is enough.</figcaption>
+        </figure>
+        <p>When Brevo asks you to pick a plan, the paid plans come first. The free plan is <strong>at the very bottom of the page</strong>: scroll down past them to the <strong>Free</strong> plan and select it. No card is required, and the free plan is plenty for sending invoices.</p>
+        <p>Brevo may show a banner asking you to <strong>verify your phone</strong> before your first sends. Follow its link: a code arrives by text message.</p>
+        <p>All the settings below are under the gear icon, top right.</p>
+      </section>
+
+      <section id="with-domain">
+        <h2>2. With your own domain (recommended)</h2>
+        <p>If your business address is on a domain you own, like <code>info@mybusiness.ca</code>, authenticate that domain with Brevo. That is what proves to your clients' mailboxes that Brevo may send on your behalf, and what keeps your invoices out of spam. No domain? Read <a href="#without-domain">section 3</a>: a domain costs about fifteen dollars a year.</p>
+        <h3>Add the domain</h3>
+        <p>Gear › <span class="path">Senders, domains, IPs</span>, <strong>Domains</strong> tab, then <strong>Add a domain</strong> (<strong>Add a new domain</strong> once the list isn't empty).</p>
+        <figure>
+          <img src="../assets/img/brevo-04-en.webp" width="1400" height="520" alt="Senders, Domains &amp; Dedicated IPs page, Domains tab, with a not-yet-authenticated domain and the Add a new domain button." loading="lazy">
+          <figcaption>The Domains tab. Here a domain was added but isn't authenticated yet.</figcaption>
+        </figure>
+        <p>Type your domain alone, without <code>www.</code> or <code>@</code>, then <strong>Continue</strong>. The <strong>Branded subdomain</strong> step that follows is optional: skip it.</p>
+        <figure>
+          <img src="../assets/img/brevo-05-en.webp" width="1400" height="350" alt="Step 1, Add your sending domain: the Domain name field contains a sample domain." loading="lazy">
+          <figcaption>Step 1: the domain name (here a sample, <code>monentreprise.ca</code>).</figcaption>
+        </figure>
+        <h3>Choose the method</h3>
+        <p><strong>Automatic</strong> (“Recommended”): Brevo connects to the provider where you bought the domain and adds the settings itself; you only sign in there when asked. <strong>Manual</strong>: Brevo shows the values and you copy them to your provider yourself. <strong>Delegate</strong> sends a link to whoever manages your domain.</p>
+        <figure>
+          <img src="../assets/img/brevo-06-en.webp" width="1400" height="480" alt="Step 3, Setup method: three choices, Automatic (Recommended), Manual and Delegate." loading="lazy">
+          <figcaption>Step 3: Automatic if Brevo recognizes your provider.</figcaption>
+        </figure>
+        <h3>The records, done manually</h3>
+        <p>In manual mode, Brevo shows four DNS records to create at your domain provider. The <strong>Copy</strong> button next to each value avoids typos.</p>
+        <ul>
+          <li><strong>Brevo code</strong>: TXT, name <code>@</code>, value <code>brevo-code:…</code> (yours is unique). If your provider rejects <code>@</code>, leave the name blank.</li>
+          <li><strong>DKIM 1</strong> and <strong>DKIM 2</strong>: CNAME, names <code>brevo1._domainkey</code> and <code>brevo2._domainkey</code>.</li>
+          <li><strong>DMARC</strong>: TXT, name <code>_dmarc</code>, a value starting with <code>v=DMARC1;</code>. If your domain already has a DMARC record, don't create a second one: keep the existing one.</li>
+        </ul>
+        <figure>
+          <img src="../assets/img/brevo-07-en.webp" width="1400" height="723" alt="Step 4, Records: Brevo code (TXT, @), DKIM 1 and DKIM 2 records (CNAME), each with a Copy button." loading="lazy">
+          <figcaption>The Brevo code and both DKIM records. The red warnings go away once the records are in place.</figcaption>
+        </figure>
+        <figure>
+          <img src="../assets/img/brevo-08-en.webp" width="670" height="305" alt="DMARC record (TXT, _dmarc), then the Verify records and Authenticate domain buttons." loading="lazy">
+          <figcaption>DMARC, then “Authenticate domain”.</figcaption>
+        </figure>
+        <p>Once the records are created, tap <strong>Verify records</strong>, then <strong>Authenticate domain</strong>. A DNS change often takes a few minutes, sometimes up to 48 hours: come back to the Domains tab later if needed.</p>
+        <h3>Add your sending address</h3>
+        <p><strong>Senders</strong> tab › <strong>Add sender</strong>. The name is what your clients will see. The address must be <strong>exactly</strong> the email in your business profile in TAGO. Pick an address that receives replies (<code>info@</code>), not a <code>noreply@</code>: it's the one printed on the invoice.</p>
+        <figure>
+          <img src="../assets/img/brevo-09-en.webp" width="1400" height="400" alt="Add Sender form: From Name My business, From Email with a sample address, Add sender button." loading="lazy">
+          <figcaption>The sender: the same email as in TAGO.</figcaption>
+        </figure>
+      </section>
+
+      <section id="without-domain">
+        <h2>3. Without a domain: it works, with limits</h2>
+        <p>With a Gmail, Outlook or Yahoo address, there is nothing to authenticate: when you sign up, Brevo already creates a <strong>Verified</strong> sender with your account's address. It also shows “Freemail domain is not recommended”.</p>
+        <figure>
+          <img src="../assets/img/brevo-03-en.webp" width="1400" height="560" alt="Senders tab: My business &lt;your.name@gmail.com&gt;, Verified, with the DMARC warning Freemail domain is not recommended." loading="lazy">
+          <figcaption>The Gmail sender Brevo creates on its own.</figcaption>
+        </figure>
+        <p>What happens when you send, observed with TAGO on October 25, 2026:</p>
+        <ul>
+          <li>Brevo <strong>replaces the sending address</strong>: your client sees the email come from <code>your.name@123456.brevosend.com</code>, not from your Gmail. Brevo does this for every free address, because of Gmail, Yahoo and Microsoft's rules.</li>
+          <li>When your client taps <strong>Reply</strong>, the reply does go to your Gmail address.</li>
+          <li>An unfamiliar address can make a client wary, and Brevo warns that these sends are more likely to land in spam.</li>
+        </ul>
+        <div class="tip"><p>Without a domain, TAGO's <strong>Send by email</strong> button is often the better choice: it goes through your own email app, so the client sees your real address. You only lose automatic sending and retries.</p></div>
+      </section>
+
+      <section id="api-key">
+        <h2>4. Generate the API key</h2>
+        <p>Gear › <span class="path">SMTP &amp; API</span>. The page opens on the <strong>SMTP</strong> tab: <strong>switch to the API keys &amp; MCP tab</strong>, because an SMTP key doesn't work in TAGO. Then tap <strong>Generate API key</strong>.</p>
+        <figure>
+          <img src="../assets/img/brevo-10-en.webp" width="1400" height="520" alt="SMTP &amp; API page, API keys &amp; MCP tab selected, with the Generate API key button top right and one restricted key named TAGO." loading="lazy">
+          <figcaption>The “API keys &amp; MCP” tab, not the SMTP tab.</figcaption>
+        </figure>
+        <ul>
+          <li><strong>Key name</strong>: <code>TAGO</code>, to recognize it later.</li>
+          <li><strong>Expiry</strong>: 1 year by default; no expiry is also offered. Either way, Brevo disables a key <strong>left unused for 90 days</strong>. You'd then generate a new one and paste it into TAGO again.</li>
+          <li><strong>Access</strong>: <strong>Restricted</strong>, then <strong>Transactional email: All</strong>. Everything else can stay at <strong>None</strong>: TAGO needs nothing more.</li>
+        </ul>
+        <figure>
+          <img src="../assets/img/brevo-11-en.webp" width="1400" height="723" alt="Generate new API Key form: name TAGO, expiry 1 year, Restricted access, Transactional email set to All." loading="lazy">
+          <figcaption>A key restricted to transactional email is enough.</figcaption>
+        </figure>
+        <p>Tap <strong>Generate</strong>. <strong>The key is shown only once</strong>: copy it right away and paste it into TAGO. Don't send it to anyone and don't keep it in a note: it lets someone send email in your name. A lost key can't be recovered: delete it in Brevo and generate another.</p>
+      </section>
+
+      <section id="in-tago">
+        <h2>5. In TAGO</h2>
+        <ol>
+          <li>In your business profile, the <strong>email</strong> must be the Brevo sender's address: <code>info@mybusiness.ca</code> with a domain, or your Gmail without one.</li>
+          <li>Open <span class="path">⋮ › Invoices and PDF</span>. Under <strong>Direct sending (Brevo — optional)</strong>, choose Brevo, paste the key into <strong>New API key</strong>, then tap <strong>Save key</strong>. It's kept encrypted on the phone, never in backups.</li>
+          <li>On a document, <strong>Send directly (Brevo)</strong> is added to the actions, under <strong>More actions</strong> (the <span class="path">⋮</span> at the bottom left). Do a first test to your own address.</li>
+        </ol>
+        <p>Once sent, the document records it under <strong>Sending history</strong>, with the recipient's address.</p>
+      </section>
+
+      <section id="trouble">
+        <h2>6. If it doesn't work</h2>
+        <details>
+          <summary>“Brevo rejects the API key”</summary>
+          <div><p>The key was miscopied, deleted or has expired: past its expiry date, or after 90 days without sending. Check that it comes from the <strong>API keys &amp; MCP</strong> tab and not the SMTP tab, then generate a new one if needed.</p></div>
+        </details>
+        <details>
+          <summary>“… is not a verified sender in Brevo”</summary>
+          <div><p>The email in your TAGO business profile matches no verified sender and no authenticated domain at Brevo. Compare the two letter by letter. With a domain, wait until the Domains tab shows it authenticated.</p></div>
+        </details>
+        <details>
+          <summary>Sending succeeded, but the client got nothing</summary>
+          <div><p>Brevo accepted the email, but the client's mailbox most likely filed it as spam. Ask them to check that folder. If it keeps happening, it's almost always a domain issue: see <a href="#with-domain">section 2</a>.</p></div>
+        </details>
+        <details>
+          <summary>“Brevo refuses to send from this account”</summary>
+          <div><p>Brevo is blocking the account itself. A new account sometimes has to verify its phone number before its first sends: look for the banner at the top of Brevo's dashboard. If you turned on blocking of unauthorized IP addresses for API keys (Security), turn it off: a phone's IP address changes all the time.</p></div>
+        </details>
+        <p>Another question: <a href="mailto:travailleurautonomego@gmail.com">travailleurautonomego@gmail.com</a>. Back to the <a href="guide.html#send">guide</a>.</p>
+      </section>
+    </article>
+  </div>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <p>© 2026 Ragnarush — Quebec, Canada. This site uses no cookies, no trackers and no scripts.</p>
+      <ul>
+        <li><a href="https://ragnarush.github.io/legal/tago/privacy-en.html">Privacy</a></li>
+        <li><a href="https://ragnarush.github.io/legal/tago/terms.html" hreflang="fr-CA">Terms (French)</a></li>
+        <li><a href="mailto:travailleurautonomego@gmail.com">Contact</a></li>
+      </ul>
+    </div>
+  </footer>
+</body>
+</html>

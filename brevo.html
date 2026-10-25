@@ -1,0 +1,202 @@
+<!doctype html>
+<html lang="fr-CA">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src 'self'; style-src 'self'; base-uri 'none'; form-action 'none'">
+  <meta name="referrer" content="no-referrer">
+  <title>Envoyer vos factures avec Brevo — TAGO</title>
+  <meta name="description" content="Créer un compte Brevo gratuit, authentifier votre domaine et générer la clé API qui permet à TAGO d'envoyer vos factures lui-même. Marche à suivre illustrée.">
+  <link rel="canonical" href="https://tagoapp.ca/brevo.html">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="TAGO">
+  <meta property="og:url" content="https://tagoapp.ca/brevo.html">
+  <meta property="og:title" content="Envoyer vos factures avec Brevo — TAGO">
+  <meta property="og:description" content="Créer un compte Brevo gratuit, authentifier votre domaine et générer la clé API qui permet à TAGO d'envoyer vos factures lui-même. Marche à suivre illustrée.">
+  <meta property="og:image" content="https://tagoapp.ca/assets/img/og-fr.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="TAGO sur un téléphone : accueil et facture">
+  <meta property="og:locale" content="fr_CA">
+  <meta property="og:locale:alternate" content="en_CA">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="alternate" hreflang="fr-CA" href="https://tagoapp.ca/brevo.html">
+  <link rel="alternate" hreflang="en-CA" href="https://tagoapp.ca/en/brevo.html">
+  <link rel="icon" href="assets/img/favicon-32.png" sizes="32x32">
+  <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+  <a class="skip" href="#contenu">Aller au contenu</a>
+
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="./"><img src="assets/img/icon-192.png" alt="" width="32" height="32">TAGO</a>
+      <nav class="site-nav" aria-label="Navigation principale">
+        <a href="./#fonctions">Fonctions</a>
+        <a href="./#vie-privee">Vie privée</a>
+        <a href="./#prix">Prix</a>
+        <a href="guide.html">Guide</a>
+        <a href="en/brevo.html" hreflang="en-CA" lang="en-CA">English</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="wrap guide">
+    <nav class="toc" aria-label="Sommaire">
+      <h2>Sommaire</h2>
+      <ol>
+        <li><a href="#account">Créer le compte</a></li>
+        <li><a href="#with-domain">Avec votre domaine</a></li>
+        <li><a href="#without-domain">Sans domaine</a></li>
+        <li><a href="#api-key">La clé API</a></li>
+        <li><a href="#in-tago">Dans TAGO</a></li>
+        <li><a href="#trouble">Si ça ne marche pas</a></li>
+      </ol>
+    </nav>
+
+    <article id="contenu">
+      <h1>Envoyer vos factures avec Brevo</h1>
+      <p class="section-intro">Sans rien configurer, TAGO envoie vos documents par l'application de courriel de votre téléphone. Avec votre propre compte <strong>Brevo</strong> (gratuit), TAGO les envoie lui-même : il réessaie seul en cas de panne passagère et note l'envoi sur le document. Cette page montre chaque écran tel qu'il était le 25 octobre 2026. Brevo change parfois son interface : si un libellé a bougé, cherchez le mot le plus proche.</p>
+      <div class="tip"><p>TAGO n'a pas de serveur : la clé reste sur votre téléphone, et l'envoi va directement de votre téléphone à Brevo (France, Union européenne). Brevo reçoit le PDF, le nom et le courriel du client ; voyez <a href="loi-25.html#hors-quebec">ce que ça implique pour la Loi 25</a>.</p></div>
+
+      <section id="account">
+        <h2>1. Créer le compte Brevo</h2>
+        <p>Allez sur <a href="https://www.brevo.com/fr/">brevo.com</a> et inscrivez-vous, avec votre courriel ou avec <strong>S'inscrire avec Google</strong>. Brevo demande ensuite le nom et l'adresse de votre entreprise.</p>
+        <figure>
+          <img src="assets/img/brevo-01-fr.webp" width="1200" height="643" alt="Page d'inscription de Brevo : bouton S'inscrire avec Google, ou champs courriel et mot de passe." loading="lazy">
+          <figcaption>L'inscription : un compte Google ou un courriel suffit.</figcaption>
+        </figure>
+        <p>À l'étape du choix de l'offre, les offres payantes sont en haut. Le gratuit est <strong>tout en bas de la page</strong> : faites défiler jusqu'à <strong>Gratuit pour toujours</strong>, puis touchez <strong>Sélectionner Gratuit</strong>. Aucune carte n'est demandée, et le gratuit suffit pour envoyer des factures.</p>
+        <figure>
+          <img src="assets/img/brevo-02-fr.webp" width="1400" height="288" alt="Encadré Gratuit pour toujours, aucune carte bancaire n'est nécessaire, avec le bouton Sélectionner Gratuit." loading="lazy">
+          <figcaption>Sous les offres payantes : « Sélectionner Gratuit ».</figcaption>
+        </figure>
+        <p>Brevo peut afficher un bandeau qui demande de <strong>vérifier votre téléphone</strong> avant les premiers envois. Suivez <strong>Vérifiez maintenant</strong> : un code arrive par texto.</p>
+        <p>Tous les réglages qui suivent sont sous la roue dentée, en haut à droite.</p>
+      </section>
+
+      <section id="with-domain">
+        <h2>2. Avec votre propre domaine (recommandé)</h2>
+        <p>Si votre adresse d'entreprise est sur un domaine à vous, comme <code>info@monentreprise.ca</code>, authentifiez ce domaine chez Brevo. C'est ce qui prouve aux boîtes de vos clients que Brevo a le droit d'envoyer en votre nom, et ce qui garde vos factures hors des indésirables. Vous n'avez pas de domaine ? Lisez la <a href="#without-domain">section 3</a> : un domaine coûte une quinzaine de dollars par année.</p>
+        <h3>Ajouter le domaine</h3>
+        <p>Roue dentée › <span class="path">Expéditeurs, domaine, IP</span>, onglet <strong>Domaines</strong>, puis <strong>Ajouter un domaine</strong>.</p>
+        <figure>
+          <img src="assets/img/brevo-04-fr.webp" width="1400" height="540" alt="Page Expéditeurs, domaines et IP dédiées, onglet Domaines vide, avec le bouton Ajouter un domaine." loading="lazy">
+          <figcaption>L'onglet Domaines, encore vide.</figcaption>
+        </figure>
+        <p>Tapez votre domaine seul, sans <code>www.</code> ni <code>@</code>, puis <strong>Continuer</strong>. L'étape <strong>Sous-domaine personnalisé</strong> qui suit est facultative : passez-la.</p>
+        <figure>
+          <img src="assets/img/brevo-05-fr.webp" width="1400" height="360" alt="Étape 1, Ajouter votre domaine d'envoi : le champ Nom de domaine contient monentreprise.ca." loading="lazy">
+          <figcaption>Étape 1 : le nom de domaine.</figcaption>
+        </figure>
+        <h3>Choisir la méthode</h3>
+        <p><strong>Automatique</strong> (« Conseillé ») : Brevo se connecte chez le fournisseur où vous avez acheté le domaine et pose les réglages lui-même ; vous n'avez qu'à vous y connecter quand il le demande. <strong>Manuelle</strong> : Brevo affiche les valeurs et vous les copiez vous-même chez votre fournisseur. <strong>Déléguer</strong> envoie un lien à la personne qui gère votre domaine.</p>
+        <figure>
+          <img src="assets/img/brevo-06-fr.webp" width="1400" height="470" alt="Étape 3, Méthode de configuration : trois choix, Automatique (Conseillé), Manuelle et Déléguer." loading="lazy">
+          <figcaption>Étape 3 : Automatique si Brevo reconnaît votre fournisseur.</figcaption>
+        </figure>
+        <h3>Les enregistrements, en manuel</h3>
+        <p>En manuel, Brevo affiche quatre enregistrements DNS à créer chez votre fournisseur de domaine. Le bouton <strong>Copier</strong> à droite de chaque valeur évite les fautes de frappe.</p>
+        <ul>
+          <li><strong>Code Brevo</strong> : TXT, nom <code>@</code>, valeur <code>brevo-code:…</code> (le vôtre est unique). Si votre fournisseur refuse <code>@</code>, laissez le nom vide.</li>
+          <li><strong>DKIM 1</strong> et <strong>DKIM 2</strong> : CNAME, noms <code>brevo1._domainkey</code> et <code>brevo2._domainkey</code>.</li>
+          <li><strong>DMARC</strong> : TXT, nom <code>_dmarc</code>, valeur qui commence par <code>v=DMARC1;</code>. Si votre domaine a déjà un DMARC, n'en créez pas un deuxième : gardez celui qui existe.</li>
+        </ul>
+        <figure>
+          <img src="assets/img/brevo-07-fr.webp" width="1400" height="850" alt="Étape 4, Enregistrements : Code Brevo (TXT, @), DKIM 1 et DKIM 2 (CNAME), chacun avec un bouton Copier." loading="lazy">
+          <figcaption>Le code Brevo et les deux DKIM. Les avertissements rouges disparaissent quand les enregistrements sont en place.</figcaption>
+        </figure>
+        <figure>
+          <img src="assets/img/brevo-08-fr.webp" width="660" height="295" alt="Enregistrement DMARC (TXT, _dmarc), puis les boutons Vérifier les enregistrements et Authentifier le domaine." loading="lazy">
+          <figcaption>Le DMARC, puis « Authentifier le domaine ».</figcaption>
+        </figure>
+        <p>Une fois les enregistrements créés, touchez <strong>Vérifier les enregistrements</strong>, puis <strong>Authentifier le domaine</strong>. Un changement DNS prend souvent quelques minutes, parfois jusqu'à 48 heures : revenez plus tard dans l'onglet Domaines au besoin.</p>
+        <h3>Ajouter votre adresse d'envoi</h3>
+        <p>Onglet <strong>Expéditeurs</strong> › <strong>Ajouter un expéditeur</strong>. Le nom est ce que vos clients verront. L'adresse doit être <strong>exactement</strong> le courriel de votre profil d'entreprise dans TAGO. Prenez une adresse qui reçoit les réponses (<code>info@</code>), pas un <code>noreply@</code> : c'est elle qui s'imprime sur la facture.</p>
+        <figure>
+          <img src="assets/img/brevo-09-fr.webp" width="1400" height="420" alt="Formulaire Ajouter un expéditeur : From Name Mon entreprise, From Email info@monentreprise.ca, bouton Ajouter l'expéditeur." loading="lazy">
+          <figcaption>L'expéditeur : le même courriel que dans TAGO.</figcaption>
+        </figure>
+      </section>
+
+      <section id="without-domain">
+        <h2>3. Sans domaine : ça marche, avec des limites</h2>
+        <p>Avec une adresse Gmail, Outlook ou Yahoo, il n'y a rien à authentifier : à l'inscription, Brevo crée déjà un expéditeur <strong>Vérifié</strong> avec l'adresse de votre compte. Il affiche aussi « Le domaine Freemail n'est pas recommandé ».</p>
+        <figure>
+          <img src="assets/img/brevo-03-fr.webp" width="1400" height="500" alt="Onglet Expéditeurs : Mon entreprise &lt;votre.nom@gmail.com&gt;, Vérifié, avec l'avertissement DMARC Le domaine Freemail n'est pas recommandé." loading="lazy">
+          <figcaption>L'expéditeur Gmail que Brevo crée tout seul.</figcaption>
+        </figure>
+        <p>Ce qui se passe à l'envoi, constaté avec TAGO le 25 octobre 2026 :</p>
+        <ul>
+          <li>Brevo <strong>remplace l'adresse d'envoi</strong> : votre client voit le courriel venir de <code>votre.nom@123456.brevosend.com</code>, pas de votre Gmail. Brevo le fait pour toute adresse gratuite, à cause des règles de Gmail, Yahoo et Microsoft.</li>
+          <li>Quand votre client touche <strong>Répondre</strong>, la réponse va bien à votre adresse Gmail.</li>
+          <li>Une adresse inconnue peut rendre un client méfiant, et Brevo prévient que ces envois risquent davantage les indésirables.</li>
+        </ul>
+        <div class="tip"><p>Sans domaine, le bouton <strong>Envoyer par courriel</strong> de TAGO reste souvent le meilleur choix : il passe par votre propre application de courriel, donc le client voit votre vraie adresse. Vous perdez seulement l'envoi automatique et les nouveaux essais.</p></div>
+      </section>
+
+      <section id="api-key">
+        <h2>4. Générer la clé API</h2>
+        <p>Roue dentée › <span class="path">SMTP et API</span>. La page s'ouvre sur l'onglet <strong>SMTP</strong> : <strong>passez à l'onglet Clés API et MCP</strong>, car une clé SMTP ne fonctionne pas dans TAGO. Touchez ensuite <strong>Générer une clé API</strong>.</p>
+        <figure>
+          <img src="assets/img/brevo-10-fr.webp" width="1400" height="620" alt="Page SMTP et API, onglet Clés API et MCP sélectionné, avec le bouton Générer une clé API en haut à droite." loading="lazy">
+          <figcaption>L'onglet « Clés API et MCP », pas l'onglet SMTP.</figcaption>
+        </figure>
+        <ul>
+          <li><strong>Nom de la clé</strong> : <code>TAGO</code>, pour la reconnaître plus tard.</li>
+          <li><strong>Expiration</strong> : 1 an par défaut ; <strong>Pas d'expiration</strong> est offert. Dans tous les cas, Brevo désactive une clé <strong>restée 90 jours sans servir</strong>. Il faudra alors en générer une nouvelle et la recoller dans TAGO.</li>
+          <li><strong>Accès</strong> : <strong>Restreint</strong>, puis <strong>Emails transactionnels : Tous</strong>. Le reste peut rester à <strong>Aucune</strong> : TAGO n'a besoin de rien d'autre.</li>
+        </ul>
+        <figure>
+          <img src="assets/img/brevo-11-fr.webp" width="1400" height="850" alt="Formulaire Générer une nouvelle clé API : nom TAGO, expiration 1 an, accès Restreint, Emails transactionnels réglé à Tous." loading="lazy">
+          <figcaption>Une clé restreinte aux courriels transactionnels suffit.</figcaption>
+        </figure>
+        <p>Touchez <strong>Générer</strong>. <strong>La clé ne s'affiche qu'une fois</strong> : copiez-la tout de suite et collez-la dans TAGO. Ne l'envoyez à personne et ne la gardez pas dans une note : elle permet d'envoyer des courriels en votre nom. Une clé perdue ne se récupère pas : supprimez-la dans Brevo et générez-en une autre.</p>
+      </section>
+
+      <section id="in-tago">
+        <h2>5. Dans TAGO</h2>
+        <ol>
+          <li>Dans le profil de votre entreprise, le <strong>courriel</strong> doit être l'adresse de l'expéditeur Brevo : <code>info@monentreprise.ca</code> avec un domaine, ou votre Gmail sans domaine.</li>
+          <li>Ouvrez <span class="path">⋮ › Factures et PDF</span>. Sous <strong>Envoi direct (Brevo — optionnel)</strong>, choisissez Brevo, collez la clé dans <strong>Nouvelle clé API</strong>, puis touchez <strong>Enregistrer la clé</strong>. Elle est gardée chiffrée sur le téléphone, jamais dans les sauvegardes.</li>
+          <li>Sur un document, <strong>Envoyer directement (Brevo)</strong> s'ajoute aux actions, dans <strong>Plus d'actions</strong> (le <span class="path">⋮</span> en bas à gauche). Faites un premier essai vers votre propre adresse.</li>
+        </ol>
+        <p>Une fois l'envoi fait, la fiche du document le note dans <strong>Historique d'envoi</strong>, avec l'adresse du destinataire.</p>
+      </section>
+
+      <section id="trouble">
+        <h2>6. Si ça ne marche pas</h2>
+        <details>
+          <summary>« Brevo refuse la clé API »</summary>
+          <div><p>La clé est mal copiée, supprimée ou expirée : après sa date d'expiration, ou après 90 jours sans envoi. Vérifiez qu'elle vient bien de l'onglet <strong>Clés API et MCP</strong> et pas de l'onglet SMTP, puis générez-en une nouvelle au besoin.</p></div>
+        </details>
+        <details>
+          <summary>« … n'est pas un expéditeur vérifié dans Brevo »</summary>
+          <div><p>Le courriel du profil d'entreprise dans TAGO ne correspond à aucun expéditeur vérifié ni à aucun domaine authentifié chez Brevo. Comparez les deux lettre par lettre. Avec un domaine, attendez que l'onglet Domaines le montre authentifié.</p></div>
+        </details>
+        <details>
+          <summary>L'envoi a réussi, mais le client n'a rien reçu</summary>
+          <div><p>Brevo a accepté le courriel, mais la boîte du client l'a probablement classé dans les indésirables. Demandez-lui de regarder ce dossier. Si ça se répète, c'est presque toujours une question de domaine : voyez la <a href="#with-domain">section 2</a>.</p></div>
+        </details>
+        <details>
+          <summary>« Brevo refuse l'envoi depuis ce compte »</summary>
+          <div><p>Brevo bloque le compte lui-même. Un compte neuf doit parfois vérifier son numéro de téléphone avant ses premiers envois : cherchez le bandeau en haut du tableau de bord de Brevo. Si vous avez activé le blocage des adresses IP non autorisées pour les clés API (Sécurité), désactivez-le : l'adresse IP d'un téléphone change sans arrêt.</p></div>
+        </details>
+        <p>Une autre question : <a href="mailto:travailleurautonomego@gmail.com">travailleurautonomego@gmail.com</a>. Retour au <a href="guide.html#send">guide</a>.</p>
+      </section>
+    </article>
+  </div>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <p>© 2026 Ragnarush — Québec, Canada. Ce site n'utilise ni témoins (cookies), ni traceurs, ni scripts.</p>
+      <ul>
+        <li><a href="https://ragnarush.github.io/legal/tago/privacy.html">Confidentialité</a></li>
+        <li><a href="https://ragnarush.github.io/legal/tago/terms.html">Conditions</a></li>
+        <li><a href="mailto:travailleurautonomego@gmail.com">Nous joindre</a></li>
+      </ul>
+    </div>
+  </footer>
+</body>
+</html>

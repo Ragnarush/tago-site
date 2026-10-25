@@ -30,4 +30,14 @@
     <xhtml:link rel="alternate" hreflang="fr-CA" href="https://tagoapp.ca/loi-25.html"/>
     <xhtml:link rel="alternate" hreflang="en-CA" href="https://tagoapp.ca/en/law-25.html"/>
   </url>
+  <url>
+    <loc>https://tagoapp.ca/brevo.html</loc>
+    <xhtml:link rel="alternate" hreflang="fr-CA" href="https://tagoapp.ca/brevo.html"/>
+    <xhtml:link rel="alternate" hreflang="en-CA" href="https://tagoapp.ca/en/brevo.html"/>
+  </url>
+  <url>
+    <loc>https://tagoapp.ca/en/brevo.html</loc>
+    <xhtml:link rel="alternate" hreflang="fr-CA" href="https://tagoapp.ca/brevo.html"/>
+    <xhtml:link rel="alternate" hreflang="en-CA" href="https://tagoapp.ca/en/brevo.html"/>
+  </url>
 </urlset>
