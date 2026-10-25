@@ -48,6 +48,7 @@ body {
 }
 
 img { max-width: 100%; height: auto; display: block; }
+code { overflow-wrap: anywhere; }
 
 a { color: var(--accent); text-underline-offset: 0.15em; }
 a:hover { text-decoration-thickness: 2px; }

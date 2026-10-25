@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="fr-CA">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src 'self'; style-src 'self'; base-uri 'none'; form-action 'none'">
+  <meta name="referrer" content="no-referrer">
+  <title>Votre nom de domaine — TAGO</title>
+  <meta name="description" content="Acheter un nom de domaine chez Cloudflare, le brancher à Brevo pour envoyer vos factures depuis votre propre adresse, et recevoir les réponses dans votre Gmail. Marche à suivre illustrée.">
+  <link rel="canonical" href="https://tagoapp.ca/domaine.html">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="TAGO">
+  <meta property="og:url" content="https://tagoapp.ca/domaine.html">
+  <meta property="og:title" content="Votre nom de domaine — TAGO">
+  <meta property="og:description" content="Acheter un nom de domaine chez Cloudflare, le brancher à Brevo pour envoyer vos factures depuis votre propre adresse, et recevoir les réponses dans votre Gmail. Marche à suivre illustrée.">
+  <meta property="og:image" content="https://tagoapp.ca/assets/img/og-fr.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="TAGO sur un téléphone : accueil et facture">
+  <meta property="og:locale" content="fr_CA">
+  <meta property="og:locale:alternate" content="en_CA">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="alternate" hreflang="fr-CA" href="https://tagoapp.ca/domaine.html">
+  <link rel="alternate" hreflang="en-CA" href="https://tagoapp.ca/en/domain.html">
+  <link rel="icon" href="assets/img/favicon-32.png" sizes="32x32">
+  <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+  <a class="skip" href="#contenu">Aller au contenu</a>
+
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="./"><img src="assets/img/icon-192.png" alt="" width="32" height="32">TAGO</a>
+      <nav class="site-nav" aria-label="Navigation principale">
+        <a href="./#fonctions">Fonctions</a>
+        <a href="./#vie-privee">Vie privée</a>
+        <a href="./#prix">Prix</a>
+        <a href="guide.html">Guide</a>
+        <a href="en/domain.html" hreflang="en-CA" lang="en-CA">English</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="wrap guide">
+    <nav class="toc" aria-label="Sommaire">
+      <h2>Sommaire</h2>
+      <ol>
+        <li><a href="#already">Vous en avez déjà un ?</a></li>
+        <li><a href="#buy">Acheter le domaine</a></li>
+        <li><a href="#brevo">Le brancher à Brevo</a></li>
+        <li><a href="#replies">Recevoir les réponses</a></li>
+        <li><a href="#in-tago">Dans TAGO</a></li>
+        <li><a href="#trouble">Si ça ne marche pas</a></li>
+      </ol>
+    </nav>
+
+    <article id="contenu">
+      <h1>Votre nom de domaine</h1>
+      <p class="section-intro">Un nom de domaine à vous, comme <code>monentreprise.ca</code>, donne une adresse d'entreprise comme <code>info@monentreprise.ca</code>. Avec <a href="brevo.html">Brevo</a>, vos factures partent de cette adresse et évitent les indésirables. Cette page montre l'achat chez <strong>Cloudflare</strong>, le branchement à Brevo et la réception des réponses dans votre Gmail, tels qu'ils étaient le 25 octobre 2026. Si un libellé a bougé, cherchez le mot le plus proche.</p>
+      <div class="tip"><p>Le domaine ne sert pas qu'aux courriels : <strong>c'est aussi l'adresse de votre futur site web</strong>. Le jour où vous en ferez un, vous le brancherez sur ce même domaine, sans rien racheter.</p></div>
+
+      <section id="already">
+        <h2>1. Vous avez déjà un domaine ?</h2>
+        <p>Si votre entreprise a déjà un site web (Wix, Squarespace, GoDaddy ou autre), elle a déjà un domaine : <strong>utilisez celui-là</strong>, rien à acheter. Passez directement à <a href="brevo.html#with-domain">l'authentification chez Brevo</a> : les enregistrements se créent là où le DNS du domaine est géré, souvent chez l'hébergeur du site. La méthode <strong>Automatique</strong> de Brevo s'en charge si elle reconnaît ce fournisseur.</p>
+        <p>Si une autre boîte reçoit déjà vos courriels sur ce domaine (Google Workspace, Microsoft 365, l'hébergeur), ne touchez ni aux enregistrements <strong>MX</strong> ni au <strong>SPF</strong> existants. Brevo n'en a pas besoin : il ajoute seulement son code et ses deux DKIM. Et un domaine n'a qu'<strong>un seul DMARC</strong> : s'il en existe déjà un, gardez-le.</p>
+      </section>
+
+      <section id="buy">
+        <h2>2. Acheter le domaine chez Cloudflare</h2>
+        <p>N'importe quel registraire fait l'affaire, canadien ou non. Ce guide montre Cloudflare parce qu'il vend les domaines <strong>au prix coûtant, sans majoration</strong>, renouvellement compris, et qu'il offre gratuitement le DNS et la redirection de courriel (<a href="#replies">section 4</a>). Cloudflare est une entreprise américaine : il connaît vos coordonnées de titulaire, mais les retire de l'annuaire public WHOIS.</p>
+        <p>Créez un compte gratuit sur <a href="https://dash.cloudflare.com/sign-up">dash.cloudflare.com</a>. Dans le menu de gauche : <span class="path">Domaines › Enregistrements</span>, puis <strong>Acheter un domaine</strong>. Cherchez le nom voulu. Un <code>.ca</code> coûtait 9,19 $ US par année le 25 octobre 2026 ; les prix sont en dollars américains.</p>
+        <figure>
+          <img src="assets/img/domaine-01-fr.webp" width="1050" height="415" alt="Page Enregistrer un domaine : recherche monentreprise-qc.ca, le .ca en Choix principal à 9,19 $ et renouvellement au même prix, puis d'autres extensions plus chères." loading="lazy">
+          <figcaption>La recherche : le prix et le prix de renouvellement sont affichés côte à côte.</figcaption>
+        </figure>
+        <p>Choisissez un nom court, facile à dicter au téléphone, sans trait d'union si possible. Le <code>.ca</code> dit tout de suite à vos clients que vous êtes au Canada.</p>
+        <h3>Le formulaire</h3>
+        <p>Touchez le domaine choisi. Le formulaire demande vos coordonnées de titulaire. Laissez <strong>Renouvellement automatique</strong> activé : un domaine qui expire, c'est une adresse de courriel qui cesse de recevoir et un nom qu'un autre peut racheter.</p>
+        <figure>
+          <img src="assets/img/domaine-02-fr.webp" width="1010" height="460" alt="Formulaire Terminer votre inscription : informations sur le registrant, et à droite les détails de l'enregistrement, 1 année, renouvellement automatique activé, sous-total 9,19 $ US." loading="lazy">
+          <figcaption>Le titulaire, et le renouvellement automatique déjà activé.</figcaption>
+        </figure>
+        <p>Un <code>.ca</code> exige une <strong>adresse canadienne</strong> et un lien avec le Canada (les <em>Exigences de présence canadienne</em>). Comme travailleur autonome, choisissez votre situation personnelle dans <strong>Type de titulaire</strong>, par exemple <em>Canadian citizen</em> ou <em>Permanent Resident of Canada</em>. Le champ <strong>Organisation</strong> ne sert qu'à une entreprise incorporée ou une autre organisation. Les choix de cette liste sont en anglais même quand l'interface est en français.</p>
+        <figure>
+          <img src="assets/img/domaine-03-fr.webp" width="614" height="355" alt="Section .ca Exigences d'enregistrement : démontrer un lien avec le Canada selon les Exigences de présence canadienne, liste Type de titulaire, puis les avis sur le courriel de vérification et le WHOIS." loading="lazy">
+          <figcaption>Les exigences du .ca, et le courriel de vérification à surveiller.</figcaption>
+        </figure>
+        <p>Touchez ensuite <strong>Continuer le paiement</strong>. <strong>Un domaine n'est pas remboursable</strong> : relisez l'orthographe avant de payer. Après l'achat, un tiers chargé du <code>.ca</code> peut vous envoyer un courriel pour vérifier votre adresse : suivez-le, sinon le domaine peut être suspendu.</p>
+      </section>
+
+      <section id="brevo">
+        <h2>3. Brancher le domaine à Brevo</h2>
+        <p>Dans Brevo, ajoutez le domaine comme le montre <a href="brevo.html#with-domain">la marche à suivre Brevo</a>, puis choisissez la méthode :</p>
+        <ul>
+          <li><strong>Automatique</strong> : si Brevo reconnaît Cloudflare, il ouvre une fenêtre Cloudflare, vous vous y connectez et vous autorisez l'ajout. Brevo crée lui-même les enregistrements.</li>
+          <li><strong>Manuelle</strong> : vous recopiez chaque enregistrement chez Cloudflare. Dans Cloudflare, ouvrez votre domaine, puis <span class="path">DNS › Enregistrements</span> et <strong>Ajouter un enregistrement</strong>.</li>
+        </ul>
+        <p>En manuel, pour chaque enregistrement affiché par Brevo : choisissez le <strong>Type</strong> (TXT ou CNAME), collez le <strong>Nom</strong> et la valeur (<strong>Contenu</strong> pour un TXT, <strong>Destination</strong> pour un CNAME), puis <strong>Enregistrer</strong>. Cloudflare ajoute votre domaine au nom tout seul : tapez <code>brevo1._domainkey</code>, pas <code>brevo1._domainkey.monentreprise.ca</code>.</p>
+        <figure>
+          <img src="assets/img/domaine-04-fr.webp" width="768" height="433" alt="Fenêtre Ajouter un enregistrement : Type CNAME, Nom brevo1._domainkey, Destination b1.monentreprise-qc-ca.dkim.brevo.com, État du proxy en DNS uniquement." loading="lazy">
+          <figcaption>Le DKIM 1 : un CNAME, avec le nuage gris « DNS uniquement ».</figcaption>
+        </figure>
+        <div class="tip"><p>Pour les deux CNAME (DKIM 1 et DKIM 2), l'<strong>État du proxy</strong> doit être <strong>DNS uniquement</strong>, le nuage gris. Cloudflare le règle souvent de lui-même pour ces noms, mais vérifiez : un nuage orange (« Proxied ») empêche Brevo de valider le DKIM.</p></div>
+        <p>Revenez ensuite dans Brevo : <strong>Vérifier les enregistrements</strong>, puis <strong>Authentifier le domaine</strong>. Chez Cloudflare, un changement se propage en général en quelques minutes.</p>
+      </section>
+
+      <section id="replies">
+        <h2>4. Recevoir les réponses dans votre Gmail</h2>
+        <p>Acheter un domaine ne crée pas de boîte de courriel : sans rien de plus, un client qui répond à <code>info@monentreprise.ca</code> obtient une erreur. <strong>Email Routing</strong>, gratuit chez Cloudflare, redirige ce qui arrive à cette adresse vers votre Gmail ou votre Outlook.</p>
+        <p>Dans le menu de gauche : <span class="path">Calcul › Service d'hébergement de courrier › Email Routing</span>, puis <strong>Intégrer le domaine</strong>.</p>
+        <figure>
+          <img src="assets/img/domaine-05-fr.webp" width="1340" height="605" alt="Page Email Routing de Cloudflare, encore inactive : privé par conception, simple et gratuit, livré dans votre boîte aux lettres préférée, avec le bouton Intégrer le domaine." loading="lazy">
+          <figcaption>Email Routing, avant d'intégrer le domaine.</figcaption>
+        </figure>
+        <ol>
+          <li>Choisissez votre domaine. Cloudflare affiche les enregistrements qu'il va ajouter (MX, SPF et DKIM) : acceptez.</li>
+          <li>Créez une adresse personnalisée, par exemple <code>info</code>, qui envoie à une adresse e-mail, avec votre adresse Gmail comme destination.</li>
+          <li>Cloudflare envoie un courriel de vérification à votre Gmail : ouvrez-le et confirmez. Tant que ce n'est pas fait, rien n'est redirigé.</li>
+          <li>Faites un essai : écrivez à <code>info@monentreprise.ca</code> depuis une autre adresse.</li>
+        </ol>
+        <p>Email Routing et Brevo ne se nuisent pas : l'un reçoit (MX), l'autre envoie (code Brevo et DKIM). Vous répondez ensuite depuis Gmail ; votre client verra alors votre adresse Gmail, sauf si vous ajoutez <code>info@</code> comme adresse d'envoi dans Gmail.</p>
+      </section>
+
+      <section id="in-tago">
+        <h2>5. Dans TAGO</h2>
+        <p>Dans le profil de votre entreprise, mettez <code>info@monentreprise.ca</code> comme <strong>courriel</strong> : c'est l'adresse qui s'imprime sur vos factures et celle que Brevo utilise comme expéditeur. Le reste se règle comme dans <a href="brevo.html#in-tago">la marche à suivre Brevo</a>.</p>
+      </section>
+
+      <section id="trouble">
+        <h2>6. Si ça ne marche pas</h2>
+        <details>
+          <summary>Brevo ne trouve pas les enregistrements</summary>
+          <div><p>Attendez quelques minutes, puis revérifiez. Comparez ensuite chaque nom dans Cloudflare : le nom ne doit pas contenir le domaine deux fois (<code>brevo1._domainkey.monentreprise.ca.monentreprise.ca</code>). Enfin, les deux CNAME doivent être en <strong>DNS uniquement</strong>, nuage gris.</p></div>
+        </details>
+        <details>
+          <summary>« Un seul DMARC » : il y en a déjà un</summary>
+          <div><p>Si <span class="path">DNS › Enregistrements</span> montre déjà un TXT nommé <code>_dmarc</code>, ne créez pas celui de Brevo : deux DMARC s'annulent. Gardez celui qui existe.</p></div>
+        </details>
+        <details>
+          <summary>Les courriels à info@ n'arrivent pas dans Gmail</summary>
+          <div><p>Vérifiez que l'adresse de destination est confirmée (le courriel de vérification de Cloudflare, section 4) et regardez les indésirables de Gmail.</p></div>
+        </details>
+        <p>Une autre question : <a href="mailto:travailleurautonomego@gmail.com">travailleurautonomego@gmail.com</a>. Retour à <a href="brevo.html">la marche à suivre Brevo</a> ou au <a href="guide.html#send">guide</a>.</p>
+      </section>
+    </article>
+  </div>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <p>© 2026 Ragnarush — Québec, Canada. Ce site n'utilise ni témoins (cookies), ni traceurs, ni scripts.</p>
+      <ul>
+        <li><a href="https://ragnarush.github.io/legal/tago/privacy.html">Confidentialité</a></li>
+        <li><a href="https://ragnarush.github.io/legal/tago/terms.html">Conditions</a></li>
+        <li><a href="mailto:travailleurautonomego@gmail.com">Nous joindre</a></li>
+      </ul>
+    </div>
+  </footer>
+</body>
+</html>

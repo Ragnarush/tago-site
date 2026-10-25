@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="en-CA">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src 'self'; style-src 'self'; base-uri 'none'; form-action 'none'">
+  <meta name="referrer" content="no-referrer">
+  <title>Your domain name — TAGO</title>
+  <meta name="description" content="Buy a domain name from Cloudflare, connect it to Brevo to send your invoices from your own address, and get the replies in your Gmail. Illustrated walkthrough.">
+  <link rel="canonical" href="https://tagoapp.ca/en/domain.html">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="TAGO">
+  <meta property="og:url" content="https://tagoapp.ca/en/domain.html">
+  <meta property="og:title" content="Your domain name — TAGO">
+  <meta property="og:description" content="Buy a domain name from Cloudflare, connect it to Brevo to send your invoices from your own address, and get the replies in your Gmail. Illustrated walkthrough.">
+  <meta property="og:image" content="https://tagoapp.ca/assets/img/og-en.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="TAGO on a phone: home screen and invoice">
+  <meta property="og:locale" content="en_CA">
+  <meta property="og:locale:alternate" content="fr_CA">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="alternate" hreflang="fr-CA" href="https://tagoapp.ca/domaine.html">
+  <link rel="alternate" hreflang="en-CA" href="https://tagoapp.ca/en/domain.html">
+  <link rel="icon" href="../assets/img/favicon-32.png" sizes="32x32">
+  <link rel="apple-touch-icon" href="../assets/img/apple-touch-icon.png">
+  <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+  <a class="skip" href="#content">Skip to content</a>
+
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="./"><img src="../assets/img/icon-192.png" alt="" width="32" height="32">TAGO</a>
+      <nav class="site-nav" aria-label="Main navigation">
+        <a href="./#features">Features</a>
+        <a href="./#privacy">Privacy</a>
+        <a href="./#pricing">Pricing</a>
+        <a href="guide.html">Guide</a>
+        <a href="../domaine.html" hreflang="fr-CA" lang="fr-CA">Français</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="wrap guide">
+    <nav class="toc" aria-label="Contents">
+      <h2>Contents</h2>
+      <ol>
+        <li><a href="#already">Already have one?</a></li>
+        <li><a href="#buy">Buy the domain</a></li>
+        <li><a href="#brevo">Connect it to Brevo</a></li>
+        <li><a href="#replies">Get the replies</a></li>
+        <li><a href="#in-tago">In TAGO</a></li>
+        <li><a href="#trouble">If it doesn't work</a></li>
+      </ol>
+    </nav>
+
+    <article id="content">
+      <h1>Your domain name</h1>
+      <p class="section-intro">A domain name of your own, like <code>mybusiness.ca</code>, gives you a business address like <code>info@mybusiness.ca</code>. With <a href="brevo.html">Brevo</a>, your invoices go out from that address and stay out of spam. This page shows buying the domain from <strong>Cloudflare</strong>, connecting it to Brevo and getting replies in your Gmail, as they were on October 25, 2026. If a label has moved, look for the closest word.</p>
+      <div class="tip"><p>The domain is not only for email: <strong>it is also the address of your future website</strong>. The day you build one, you connect it to this same domain, with nothing more to buy.</p></div>
+
+      <section id="already">
+        <h2>1. Already have a domain?</h2>
+        <p>If your business already has a website (Wix, Squarespace, GoDaddy or other), it already has a domain: <strong>use that one</strong>, nothing to buy. Go straight to <a href="brevo.html#with-domain">authenticating it with Brevo</a>: the records go wherever the domain's DNS is managed, often at the website host. Brevo's <strong>Automatic</strong> method does it for you if it recognizes that provider.</p>
+        <p>If another service already receives your email on that domain (Google Workspace, Microsoft 365, the host), do not touch the existing <strong>MX</strong> or <strong>SPF</strong> records. Brevo needs neither: it only adds its code and its two DKIM records. And a domain has <strong>only one DMARC</strong>: if one already exists, keep it.</p>
+      </section>
+
+      <section id="buy">
+        <h2>2. Buying the domain from Cloudflare</h2>
+        <p>Any registrar will do, Canadian or not. This guide shows Cloudflare because it sells domains <strong>at cost, with no markup</strong>, renewals included, and offers free DNS and email forwarding (<a href="#replies">section 4</a>). Cloudflare is an American company: it knows your registrant details, but removes them from the public WHOIS directory.</p>
+        <p>Create a free account at <a href="https://dash.cloudflare.com/sign-up">dash.cloudflare.com</a>. In the left menu: <span class="path">Domains › Registrations</span>, then <strong>Buy domain</strong>. Search for the name you want. A <code>.ca</code> cost US$9.19 a year on October 25, 2026; prices are in US dollars.</p>
+        <figure>
+          <img src="../assets/img/domaine-01-en.webp" width="1050" height="415" alt="Register domain page: search for monentreprise-qc.ca, the .ca as Top pick at $9.19 renewing at the same price, then other, pricier extensions." loading="lazy">
+          <figcaption>The search: price and renewal price side by side.</figcaption>
+        </figure>
+        <p>Pick a short name that is easy to spell out over the phone, without hyphens if you can. A <code>.ca</code> tells your clients right away that you are in Canada.</p>
+        <h3>The form</h3>
+        <p>Tap the domain you chose. The form asks for your registrant details. Leave <strong>Automatic renewal</strong> on: an expired domain is an email address that stops receiving, and a name someone else can buy.</p>
+        <figure>
+          <img src="../assets/img/domaine-02-en.webp" width="1010" height="460" alt="Complete your registration form: registrant information, and on the right the registration details, 1 year, automatic renewal on, subtotal $9.19." loading="lazy">
+          <figcaption>The registrant, and automatic renewal already on.</figcaption>
+        </figure>
+        <p>A <code>.ca</code> requires a <strong>Canadian address</strong> and a connection to Canada (the <em>Canadian Presence Requirements</em>). As a self-employed person, pick your personal situation under <strong>Registrant type</strong>, for example <em>Canadian citizen</em> or <em>Permanent Resident of Canada</em>. The <strong>Organization</strong> field is only for an incorporated business or another organization.</p>
+        <figure>
+          <img src="../assets/img/domaine-03-en.webp" width="614" height="355" alt=".ca Registration Requirements section: demonstrate a connection to Canada under the Canadian Presence Requirements, Registrant type list, then the notes on the verification email and WHOIS." loading="lazy">
+          <figcaption>The .ca requirements, and the verification email to watch for.</figcaption>
+        </figure>
+        <p>Then tap <strong>Continue to pay</strong>. <strong>A domain is non-refundable</strong>: check the spelling before you pay. After the purchase, a third party handling the <code>.ca</code> may email you to verify your address: follow it, or the domain may be suspended.</p>
+      </section>
+
+      <section id="brevo">
+        <h2>3. Connecting the domain to Brevo</h2>
+        <p>In Brevo, add the domain as shown in <a href="brevo.html#with-domain">the Brevo walkthrough</a>, then pick the method:</p>
+        <ul>
+          <li><strong>Automatic</strong>: if Brevo recognizes Cloudflare, it opens a Cloudflare window, you sign in and allow the change. Brevo creates the records itself.</li>
+          <li><strong>Manual</strong>: you copy each record into Cloudflare. In Cloudflare, open your domain, then <span class="path">DNS › Records</span> and <strong>Add record</strong>.</li>
+        </ul>
+        <p>In manual mode, for each record Brevo shows: pick the <strong>Type</strong> (TXT or CNAME), paste the <strong>Name</strong> and the value (<strong>Content</strong> for a TXT, <strong>Target</strong> for a CNAME), then <strong>Save</strong>. Cloudflare appends your domain to the name on its own: type <code>brevo1._domainkey</code>, not <code>brevo1._domainkey.mybusiness.ca</code>.</p>
+        <figure>
+          <img src="../assets/img/domaine-04-en.webp" width="768" height="433" alt="Add record window: Type CNAME, Name brevo1._domainkey, Target b1.monentreprise-qc-ca.dkim.brevo.com, Proxy status DNS only." loading="lazy">
+          <figcaption>DKIM 1: a CNAME, with the grey "DNS only" cloud.</figcaption>
+        </figure>
+        <div class="tip"><p>For both CNAME records (DKIM 1 and DKIM 2), <strong>Proxy status</strong> must be <strong>DNS only</strong>, the grey cloud. Cloudflare often sets it on its own for these names, but check: an orange cloud ("Proxied") keeps Brevo from validating the DKIM.</p></div>
+        <p>Then go back to Brevo: <strong>Verify records</strong>, then <strong>Authenticate domain</strong>. At Cloudflare, a change usually spreads within a few minutes.</p>
+      </section>
+
+      <section id="replies">
+        <h2>4. Getting the replies in your Gmail</h2>
+        <p>Buying a domain does not create a mailbox: with nothing more, a client who replies to <code>info@mybusiness.ca</code> gets an error. <strong>Email Routing</strong>, free at Cloudflare, forwards what arrives at that address to your Gmail or Outlook.</p>
+        <p>In the left menu: <span class="path">Compute › Email Service › Email Routing</span>, then <strong>Onboard Domain</strong>.</p>
+        <figure>
+          <img src="../assets/img/domaine-05-en.webp" width="1360" height="560" alt="Cloudflare Email Routing page, not yet active: private by design, straightforward and free, delivered to your preferred mailbox, with the Onboard Domain button." loading="lazy">
+          <figcaption>Email Routing, before onboarding the domain.</figcaption>
+        </figure>
+        <ol>
+          <li>Pick your domain. Cloudflare shows the records it will add (MX, SPF and DKIM): accept.</li>
+          <li>Create a custom address, for example <code>info</code>, that sends to an email address, with your Gmail address as the destination.</li>
+          <li>Cloudflare sends a verification email to your Gmail: open it and confirm. Until you do, nothing is forwarded.</li>
+          <li>Test it: write to <code>info@mybusiness.ca</code> from another address.</li>
+        </ol>
+        <p>Email Routing and Brevo don't get in each other's way: one receives (MX), the other sends (Brevo code and DKIM). You then reply from Gmail; your client will see your Gmail address, unless you add <code>info@</code> as a "send mail as" address in Gmail.</p>
+      </section>
+
+      <section id="in-tago">
+        <h2>5. In TAGO</h2>
+        <p>In your business profile, set <code>info@mybusiness.ca</code> as the <strong>email</strong>: it is the address printed on your invoices and the one Brevo uses as the sender. The rest is set up as in <a href="brevo.html#in-tago">the Brevo walkthrough</a>.</p>
+      </section>
+
+      <section id="trouble">
+        <h2>6. If it doesn't work</h2>
+        <details>
+          <summary>Brevo can't find the records</summary>
+          <div><p>Wait a few minutes, then check again. Next, compare each name in Cloudflare: the name must not contain the domain twice (<code>brevo1._domainkey.mybusiness.ca.mybusiness.ca</code>). Finally, both CNAME records must be <strong>DNS only</strong>, grey cloud.</p></div>
+        </details>
+        <details>
+          <summary>"Only one DMARC": there already is one</summary>
+          <div><p>If <span class="path">DNS › Records</span> already shows a TXT named <code>_dmarc</code>, don't create Brevo's: two DMARC records cancel each other out. Keep the existing one.</p></div>
+        </details>
+        <details>
+          <summary>Email to info@ doesn't reach Gmail</summary>
+          <div><p>Check that the destination address is confirmed (Cloudflare's verification email, section 4) and look in Gmail's spam folder.</p></div>
+        </details>
+        <p>Another question: <a href="mailto:travailleurautonomego@gmail.com">travailleurautonomego@gmail.com</a>. Back to <a href="brevo.html">the Brevo walkthrough</a> or the <a href="guide.html#send">guide</a>.</p>
+      </section>
+    </article>
+  </div>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <p>© 2026 Ragnarush — Quebec, Canada. This site uses no cookies, no trackers and no scripts.</p>
+      <ul>
+        <li><a href="https://ragnarush.github.io/legal/tago/privacy-en.html">Privacy</a></li>
+        <li><a href="https://ragnarush.github.io/legal/tago/terms.html" hreflang="fr-CA">Terms (French)</a></li>
+        <li><a href="mailto:travailleurautonomego@gmail.com">Contact</a></li>
+      </ul>
+    </div>
+  </footer>
+</body>
+</html>
